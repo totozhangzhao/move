@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection"content="telephone=no">
+	<title>七夕情人节为爱狂欢-"管家"助你甜蜜蜜</title>
+	<style>
+	html, body {
+		width: 100%;
+		height: 100%;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		text-decoration: none;
+	}
+	button {
+		outline: none 0;
+		border: none;
+	}
+	img {
+		display: block;
+		border: none 0;
+		width: 100%;
+	}
+	.lucky-box {
+		max-width: 750px;
+		height: 100%;
+		margin: 0 auto;
+		background: #0b0011;
+	}
+	.lucky-desc-bar,
+	.lucky-status-bar,
+	.lucky-btn-bar,
+	.lucky-nav-bar {
+		position: relative;
+	}
+	.lucky-nav-bar {
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		color: #f4f3b3;
+		position: fixed;
+		left: 0;
+		top: 0;
+	}
+	.lucky-shadow-bar {
+		width: 100%;
+		height: 40px;
+		background: #000;
+		opacity: 0.5;
+	}
+	.lucky-integral-area,
+	.lucky-rule-area {
+		font-size: 14px;
+		height: 14px;
+		line-height: 14px;
+		position: absolute;
+	}
+	.lucky-integral-area {
+		left: 15px;
+		top: 13px;
+	}
+	.lucky-rule-area {
+		padding-left: 18px;
+		right: 15px;
+		top: 13px;
+		background: url(http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-card/lucky-card-icon.png) no-repeat;
+		background-size: 14px 14px;
+	}
+	.lucky-rule-area a {
+		color: #f4f3b3;
+	}
+	.lucky-desc-text,
+	.lucky-detail-btn {
+		width: 100%;
+		text-align: center;
+		color: #fcfa6c;
+		position: absolute;
+		left: 0;
+		bottom: 50px;
+	}
+	.lucky-detail-btn {
+		text-decoration: underline;
+		left: 0;
+		bottom: 20px;
+	}
+	.lucky-status-area {
+		width: 266px;
+		height: 127px;
+		background: url(http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-card/lucky-card-bg.png) no-repeat;
+		background-size: cover;
+		position: absolute;
+		left: 50%;
+		top: 0;
+		margin-left: -133px;
+	}
+	.lucky-status-area-son {
+		width: 253px;
+		height: 98px;
+		position: absolute;
+		left: 7px;
+		top: 15px;
+	}
+	.box-shadow {
+		width: 100%;
+		height: 100%;
+		background: rgba(255, 255, 255, 0.5);
+		position: fixed;
+		left: 0;
+		top: 0;
+	}
+	.tip-box {
+		width: 277px;
+		height: 255px;
+		border-radius: 4px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		margin-left: -138px;
+		margin-top: -128px;
+		background: #fff;
+	}
+	.tip-box img {
+		border-radius: 3px;
+	}
+	.prize-desc {
+		font-size: 14px;
+		color: #ae1eb8;
+		box-sizing: border-box;
+		width: 100%;
+		word-break:break-word;
+		padding: 0 20px;
+		height: 48px;
+		line-height: 24px;
+		overflow: hidden;
+		text-align: center;
+	}
+	.go-award {
+		width: 70%;
+		height: 30px;
+		line-height: 30px;
+		text-align: center;
+		color: #fff;
+		font-size: 16px;
+		border-radius: 30px;
+		background: -webkit-linear-gradient(top, #ae1eb8, #40025d);
+		position: absolute;
+		left: 50%;
+		bottom: 16px;
+		margin-left: -35%;
+	}
+	.close-btn {
+		width: 32px;
+		height: 32px;
+		background: url(http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love-close.png) no-repeat;
+		background-size: 32px 32px;
+		position: absolute;
+		right: -16px;
+		top: -16px;
+	}
+	</style>
+</head>
+<body>
+	<section class="lucky-box">
+		<nav class="lucky-nav-bar">
+			<div class="lucky-shadow-bar"></div>
+			<p class="lucky-integral-area">当前积分：<span>50000</span></p>
+			<p class="lucky-rule-area"><a href="https://dl.rsscc.cn/guanggao/integral/active/lucky-love-rule.html">抽奖规则</a></p>
+		</nav>
+		<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love01.jpg">
+		<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love02.jpg">
+		<div class="lucky-status-bar">
+			<div class="lucky-status-area">
+				<div class="lucky-status-area-son">
+					<!--
+						1.lucky-prize-ready.jpg   	默认图片
+						2.lucky-prize-necklace.jpg  施华洛世奇项链
+						3.lucky-prize-lose.jpg  		失败
+						4.lucky-prize-hotel.jpg   	1000元酒店房券
+						5.lucky-prize-durex.jpg   	杜蕾斯套装
+						6.lucky-prize-chocolate.jpg 巧克力
+						7.lucky-prize-card.jpg      手机充值卡
+					-->
+					<!-- <img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-prize-ready.jpg">
+					<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-prize-necklace.jpg">
+					<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-prize-lose.jpg">
+					<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-prize-hotel.jpg">
+					<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-prize-durex.jpg">
+					<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-prize-chocolate.jpg"> -->
+					<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-prize-card.jpg">
+				</div>
+			</div>
+		</div>
+		<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love03.jpg">
+		<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love04.jpg">
+		<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love05.jpg">
+		<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love06.jpg">
+		<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love07.jpg">
+		<div class="box-shadow">
+			<div class="tip-box">
+				<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/lucky-draw/lucky-love/lucky-love-window.png?a=v">
+				<p class="prize-desc">阿杜好好奋斗圣诞节放假就大煞风景阿杜好好奋斗圣诞节放假就大煞风景</p>
+				<!-- 实物奖品 添加地址 -->
+				<!-- <a href="../address-page/add-address.html" class="go-award">马上领奖</a> -->
+				<!-- 虚拟奖品 查看奖品-->
+				<a href="../order-detail-2.0.html" class="go-award">查看奖品</a>
+				<b class="close-btn"></b>
+			</div>
+		</div>
+		<div id="__wechat_share" style="display:none;">
+        <div id="__wechat_title">七夕除了啪啪啪，还可以找管家...</div>
+        <div id="__wechat_desc">五星酒店开房，水晶项链、甜蜜巧克力免费送，更有10万只套套让你爱爱不停，一起来吧</div>
+        <div id="__wechat_link">https://dl.rsscc.cn/guanggao/integral/active/lucky-love-share.html</div>
+        <div id="__wechat_img">http://cdn.rsscc.cn/guanggao/img/mall/share/h2-share-luckylove.png</div>
+    </div>
+	</section>
+</body>
+</html>

@@ -1,0 +1,111 @@
+// 快递页面 start 
+
+.delivery-nav {
+  height: 40px;
+  .lineHeight(40px);
+}
+.delivery-info {
+  height: @defaultHeight;
+  text-align: center;
+  .fontColor(#fff);
+}
+.delivery-info:nth-child(1) {
+  width: 40%;
+  .bgColor(#88cdfe);
+}
+.delivery-info:nth-child(2) {
+  width: 60%;
+  .bgColor(#67baf7);
+}
+.delivery-status {
+  .pos();
+}
+.delivery-status:nth-child(even) {
+  .bgColor(#f6f6f6);
+}
+.delivery-status:nth-child(odd) {
+  .bgColor(#eee);
+}
+.delivery-time-pos {
+  .padding-width(18px, 18px, 18px, 18px);
+  height: @defaultHeight;
+}
+.delivery-time-pos:nth-child(1) {
+  width: 40%;
+  .pos(absolute, left, 0, top, 0);
+}
+.delivery-time-pos:nth-child(1) div {
+  width: @defaultWidth;
+  height: @defaultHeight;
+  .pos(absolute, left, 0, top, 50%);
+  .margin-common(top, -20px);
+}
+.delivery-time-pos:nth-child(2) {
+  width: 60%;
+  .fontSize(14px);
+  .lineHeight(24px);
+}
+.delivery-time-pos p {
+  text-align: center;
+}
+.delivery-time-pos p:nth-child(1) {
+  .fontSize(12px);
+}
+.delivery-line {
+  width: 3px;
+  height: @defaultHeight;
+  .bgColor(#ccc);
+  .pos(absolute, left, 40%, top, 0);
+}
+.delivery-line-finish {
+  width: 3px;
+  height: 50%;
+  .bgColor(#ccc);
+  .pos(absolute, left, 40%, top, 0);
+}
+.delivery-status:nth-child(1) .delivery-line {
+  height: 50%;
+  top: 50%;
+}
+.delivery-roll {
+  width: 10px;
+  height: 10px;
+  .bgColor(#67baf7);
+  .borderRadius(50%);
+  .pos(absolute, left, 40%, top, 50%);
+  .margin-common(left, -5px);
+  .margin-common(top, -5px);
+}
+.delivery-status:nth-child(1) .delivery-roll {
+  top: 0;
+}
+.delivery-line-finish .delivery-roll {
+  width: 0;
+}
+.delivery-bg {
+  width: 16px;
+  height: 16px;
+  .bgColor(#fff);
+  .borderCommon(left, 1px, solid, #f3f3f3);
+  .borderCommon(top, 1px, solid, #f3f3f3);
+  .borderCommon(right, 1px, solid, #f3f3f3);
+  .borderCommon(bottom, 1px, solid, #f3f3f3);
+  .borderRadius(50%);
+  .pos(absolute, left, 0, top, 50%);
+  .margin-common(left, -7px);
+  .margin-common(top, -8px);
+}
+.delivery-status:nth-child(1) .delivery-bg {
+  top: 0;
+}
+.delivery-line-finish .delivery-bg {
+  width: 18px;
+  height: 18px;
+  top: @defaultHeight;
+  .margin-common(left, -8px);
+  .margin-common(top, -9px);
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png?a=b) no-repeat -93px -147px;
+  .bgSize();
+}
+
+// 快递页面 end 

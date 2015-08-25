@@ -1,0 +1,244 @@
+// 地址页面 start
+
+.address-page-box {
+  .fontColor(#666);
+  .bgColor(#f3f3f3);
+}
+.address-username-bar,
+.address-usertel-bar,
+.address-option-bar {
+  height: 42px;
+  .lineHeight(42px);
+  .bgColor(#fff);
+  .padding-width();
+  .pos();
+}
+.address-option-se {
+  width: @defaultWidth;
+  height: @defaultHeight;
+  .fontColor(#666);
+  .bgColor(#fff);
+}
+@media only screen and (max-width:374px){
+  .address-option-area {
+    width: @defaultWidth;
+    .padding-width();
+    .pos();
+  }
+  .address-option-bar .border-l {
+    border-width: 0;
+  }
+  .address-option-bar {
+    height: 126px;
+    .padding-width(0, 0, 0, 0);
+    .fontColor(#666);
+    .bgColor(#fff);
+  }
+  .address-option-area:after {
+    content: '';
+    width: 13px;
+    height: 7px;
+    background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -145px -120px;
+    .bgSize();
+    .pos(absolute, right, 10px, top, 50%);
+    .margin-common(top, -3px);
+  }
+  .address-se-la {
+    .padding-width(0, 0, 0, 0);
+  }
+}
+@media only screen and (min-width:375px){
+  .address-option-bar {
+    display: flex;
+    display: -webkit-flex;
+  }
+  .address-option-area {
+    flex: 1;
+    -webkit-flex: 1;
+    .pos();
+  }
+  .address-option-bar .border-b {
+    border-width: 0;
+  }
+  .address-option-area:after {
+    content: '';
+    width: 13px;
+    height: 7px;
+    background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -145px -120px;
+    .bgSize();
+    .pos(absolute, right, 10px, top, 50%);
+    .margin-common(top, -3px);
+  }
+  .address-option-area:nth-child(3):after {
+    right: -2px;
+  }
+  .address-se-la {
+    .padding-width(0, 0, 0, 6px);
+  }
+  .address-option-area:nth-child(1) .address-se-la {
+    width: @defaultWidth;
+    .pos();
+    .padding-width(0, 0, 0, 6px);
+  }
+}
+.address-option-se[disabled] {
+  .fontColor(#ccc);
+}
+.address-detail-bar {
+  .lineHeight(42px);
+  .bgColor(#fff);
+  .padding-width();
+}
+.address-detail-insert {
+  width: 66%;
+  height: 63px;
+  .padding-width(9px, 8px, 9px, 8px);
+}
+.address-username-insert,
+.address-usertel-insert {
+  width: 70%;
+}
+.address-foot-box {
+  width: @defaultWidth;
+  height: 40px;
+  .margin-common(top, 20px);
+}
+.address-foot-btn {
+  width: 90%;
+  text-align: center;
+  display: block;
+  height: 40px;
+  .lineHeight(40px);
+  .borderRadius(5px);
+  .fontSize(18px);
+  .fontColor(#fff);
+  .margin-width(0, auto, 0, auto);
+}
+.address-foot-box .forbidden-color {
+  .fontColor(#999);
+}
+.address-exist-fatherbar {
+  .padding-width(0, 0, 40px, 0);
+}
+.address-exist-bar {
+  .fontSize(14px);
+  .lineHeight(34px);
+}
+.address-exist-area {
+  .padding-width(4px, 10px, 0, 10px);
+  .margin-common(bottom, 10px);
+  .pos();
+  .bgColor(#fff);
+}
+.confirm-order .address-exist-area {
+  .padding-width(10px, 10px, 10px, 10px);
+}
+.address-exist-info {
+  .fontSize();
+  .fontColor(#111);
+}
+.address-exist-username {
+  width: 35%;
+  .ellipsis;
+}
+.address-exist-usertel {
+  .margin-common(left, 5px);
+}
+.address-exist-nameicon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  .margin-common(right, 10px);
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -99px -120px;
+  .bgSize();
+}
+.address-exist-telicon {
+  width: 11px;
+  height: 17px;
+  display: inline-block;
+  .margin-common(right, 10px);
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -124px -120px;
+  .bgSize();
+  .pos(relative, left, 0, top, 2px);
+}
+.address-exist-text {
+  .lineHeight(24px);
+  .padding-width(0, 0, 6px, 0);
+}
+.address-page-box .pay-order-box {
+  .margin-common(top, 10px);
+  .pos();
+}
+.address-page-box .order-goods-text {
+   .fontSize(14px);
+   font-family: @fontArial;
+}
+.address-page-box .pic-detail {
+  height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+  .lineHeight(20px);
+  .fontSize();
+  .fontColor(#111);
+}
+.address-page-box .pic-detail-tip {
+  .margin-common(top, 4px);
+}
+.address-page-box .actually-pay {
+  .fontSize();
+  .pos(absolute, right, 10px, bottom, 10px);
+}
+.address-control-bar {
+  width: @defaultWidth;
+  height: 40px;
+  .lineHeight(40px);
+  .pos();
+}
+.address-set-area {
+  height: @defaultHeight;
+}
+.address-radio-group {
+  .pos();
+  height: 14px;
+}
+.address-custom-common {
+  width: 13px;
+  height: 13px;
+  .pos(absolute, left, 0, top, 0);
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -69px -146px;
+  .bgSize();
+}
+.address-radio-group input[type="radio"]:checked + .address-custom-common {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -46px -146px;
+  .bgSize();
+}
+.address-set-inp {
+  .pos(absolute, left, 0, top, 0);
+  opacity: 0.01;
+}
+.address-set-default {
+  .margin-common(left, 20px);
+}
+.address-edit-area {
+  .pos(absolute, right, 70px, top, 0);
+}
+.address-delete-area {
+  .pos(absolute, right, 0, top, 0);
+}
+.address-edit-icon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -23px -146px;
+  .bgSize();
+  .margin-common(right, 6px);
+}
+.address-delete-icon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat 0 -146px;
+  .bgSize();
+  .margin-common(right, 6px);
+}
+// 地址页面 end 

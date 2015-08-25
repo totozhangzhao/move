@@ -1,0 +1,352 @@
+// 高铁商城首页 start
+
+.home-page-box {
+  max-width: 750px;
+  min-height: @defaultHeight;
+  .margin-width(0, auto, 0, auto);
+  .fontSize(14px);
+  .pos();
+}
+.home-banner-bar,
+.home-banner-pic,
+.home-banner-pic img {
+  width: @defaultWidth;
+}
+.home-nav {
+  height: 40px;
+  .lineHeight(40px);
+  .padding-width();
+  .bgColor(#fff);
+}
+.home-nav .home-record-btn {
+  height: @commonHeight;
+  .lineHeight(22px);
+  .padding-width();
+  .margin-common(top, 9px);
+  .borderRadius(10px);
+  .fontColor(#fff);
+  .bgColor(#4d9eeb);
+}
+.home-goods-bar {
+  .bgColor(#f3f3f3);
+  .padding-width(0, 0, 231px, 0);
+}
+.home-goods-bar .num-color {
+  .fontSize(12px);
+  .fontColor(#fff);
+}
+.home-show-area {
+  .padding-width(3px, 0, 0, 0);
+}
+.home-recommend,
+.home-limit,
+.home-hot {
+  .bgColor(#fff);
+  .margin-common(top, 3px);
+}
+.home-big-bar {
+  width: 44%;
+  height: 187px;
+  .pos();
+}
+.home-small-bar {
+  width: 55%;
+  height: 92px;
+}
+.home-common-tit {
+  height: 21px;
+}
+.home-common-tit-icon {
+  width: 20px;
+  height: 20px;
+  .margin-common(right, 5px);
+}
+.home-recommend .home-common-tit {
+  .fontColor(#4d9eeb);
+}
+.home-recommend .home-value-common .home-value-p {
+  .bgColor(#4d9eeb);
+} 
+.home-recommend .home-value-common .home-value-icon {
+  .borderCommon(left, 10px, solid, #4d9eeb);
+} 
+.home-hot .home-value-common .home-value-p {
+  .bgColor(#ffbe46);
+} 
+.home-hot .home-value-common .home-value-icon {
+  .borderCommon(left, 10px, solid, #ffbe46);
+} 
+.home-limit .home-value-common .home-value-p {
+  .bgColor(#ff6533);
+} 
+.home-limit .home-value-common .home-value-icon {
+  .borderCommon(left, 10px, solid, #ff6533);
+} 
+.home-recommend .home-common-tit-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -45px -87px;
+  .bgSize();
+}
+.home-hot .home-common-tit {
+  .fontColor(#ffbe46);
+}
+.home-hot .home-common-tit-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -99px -85px;
+  .bgSize();
+}
+.home-limit .home-common-tit {
+  .fontColor(#ff6533);
+}
+.home-limit .home-common-tit-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -71px -87px;
+  .bgSize();
+}
+.home-recommend a,
+.home-hot a,
+.home-limit a {
+  width: @defaultWidth;
+  height: @defaultHeight;
+  .pos();
+  display: block;
+}
+.home-big-pic-bar {
+  .pos(absolute, left, 50%, bottom, 9px);
+  .margin-common(left, -60px);
+}
+.home-show-text-bar {
+  width: 70%;
+  .padding-width(4px, 0, 0, 10px);
+}
+.home-show-pic-bar {
+  width: 45%;
+  .pos(absolute, right, 4%, bottom, 15px);
+}
+.home-small-goods-pic{
+  width: 86px;
+}
+.home-goods-dt {
+  .padding-width(10px, 0, 10px, 0);
+}
+.home-filed-box {
+  width: 150px; 
+  text-align: center; 
+  .fontSize();
+  .fontColor(#999);
+  .margin-width(0, auto, 0, auto);
+  .borderCommon(top, 1px, solid, #ccc);
+}
+.home-goods-area-son {
+  width: 49.5%;
+  height: 141px;
+  .margin-common(bottom, 3px);
+  .bgColor(#fff);
+}
+.home-goods-area-son:nth-of-type(odd) {
+  float: left;
+  border-image:url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 1px 0px 0px;
+}
+.home-goods-area-son:nth-of-type(even) {
+  float: right;
+  border-image:url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 0px 0px 1px;
+}
+.home-text-bar {
+  width: @defaultWidth;
+  .padding-width(4px, 0, 0, 10px);
+}
+.home-pic-detail {
+  width: 95%;
+  .fontSize(12px);
+  .fontColor(#999);
+  .lineHeight(16px);
+  .margin-common(bottom, 3px);
+}
+.home-big-pic-detail {
+  width: 95%;
+  .fontSize(12px);
+  .fontColor(#999);
+  .lineHeight(16px);
+  .margin-width(4px, 0, 5px, 0);
+}
+.home-small-pic-detail {
+  width: 60%;
+  max-height: 32px;
+  overflow: hidden;
+  .fontSize(12px);
+  .fontColor(#999);
+  .lineHeight(16px);
+  .margin-width(4px, 0, 5px, 0);
+}
+.home-text-bar-p {
+  width: @defaultWidth;
+  .ellipsis;
+}
+.home-value-common {
+  height: 16px;
+  .lineHeight(16px);
+  .fontSize(12px);
+  .fontColor(#fff);
+}
+.home-value-p {
+  min-width: 24px;
+  height: 16px;
+  .padding-width(0, 8px, 0, 4px);
+}
+.home-value-money .home-value-p {
+  .bgColor(#4d9eeb);
+}
+.home-value-end .home-value-p {
+  .bgColor(#ccc);
+}
+.home-value-point .home-value-p {
+  .bgColor(#ffbe46);
+}
+.home-value-point-money .home-value-p {
+  .bgColor(#ff6533);
+}
+.home-value-icon {
+  .borderCommon(top, 8px, dashed, transparent);
+  .borderCommon(bottom, 8px, dashed, transparent);
+  .borderCommon(right, 8px, dashed, transparent);
+  .borderCommon(left, 10px, dashed, transparent);
+  .pos();
+}
+.home-value-icon:after {
+  width: 3px;
+  height: 3px;
+  display: block;
+  content: '';
+  .pos(absolute, left, -10px, top, -2px);
+  .bgColor(#fff);
+  .borderRadius(50%);
+} 
+.home-value-point-money .home-value-icon {
+  .borderCommon(left, 10px, solid, #ff6533);
+}
+.home-value-money .home-value-icon {
+  .borderCommon(left, 10px, solid, #4d9eeb);
+}
+.home-value-point .home-value-icon {
+  .borderCommon(left, 10px, solid, #ffbe46);
+}
+.home-value-end .home-value-icon {
+  .borderCommon(left, 10px, solid, #ccc);
+}
+.home-value {
+  .fontSize(10px);
+}
+.home-goods-pic {
+  width: 100px;
+  .margin-width(0, auto, 0, auto);
+}
+.home-big-goods-pic {
+  width: 120px;
+  .margin-width(0, auto, 0, auto);
+}
+.home-pic-bar {
+  .padding-width(12px, 0, 4px, 0);
+}
+.state-icon {
+  .margin-common(left, 8px);
+  .margin-common(top, -3px);
+  display:inline-block;
+  vertical-align: middle;
+}
+.state-limit {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -205px 0;
+  .bgSize();
+}
+.state-out {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -244px 0;
+  .bgSize();
+}
+.state-prize {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -283px 0;
+  .bgSize();
+}
+.state-grab {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -166px 0;
+  .bgSize();
+}
+.new-user {
+  width: 34px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat;
+  .bgSize();
+}
+.old-user {
+  width: 34px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -44px 0;
+  .bgSize();
+}
+.month-card {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -88px 0;
+  .bgSize();
+}
+.quarter-card {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -127px 0;
+  .bgSize();
+}
+.user-v1 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat 0 -29px;
+  .bgSize();
+}
+.user-v2 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -50px -29px;
+  .bgSize();
+}
+.user-v3 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -100px -29px;
+  .bgSize();
+}
+.user-v4 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -150px -29px;
+  .bgSize();
+}
+.user-v5 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -200px -29px;
+  .bgSize();
+}
+.user-v6 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -250px -29px;
+  .bgSize();
+}
+.user-v7 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat 0 -58px;
+  .bgSize();
+}
+.user-v8 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -50px -58px;
+  .bgSize();
+}
+
+// 高铁商城首页 end 

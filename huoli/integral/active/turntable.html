@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width">
+  
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection"content="telephone=no">
+	<title>幸运大转盘</title>
+	<style>
+	html, body {
+		width: 100%;
+		height: 100%;
+	}
+	* {
+		margin: 0;
+		padding: 0;
+	}
+	a {
+		text-decoration: none;
+	}
+	li {
+		list-style: none;
+	}
+	button {
+		outline: none 0;
+		border: none;
+	}
+	img {
+		display: block;
+		border: none 0;
+		width: 100%;
+	}
+	.fl {
+	  float: left;
+	}
+	.fr {
+	  float: right;
+	}
+	.clear {
+	  clear: both;
+	}
+	.clearfix {
+	  zoom: 1;
+	}
+	.clearfix:after {
+	  content: ".";
+	  clear: both;
+	  display: block;
+	  height: 0;
+	  visibility: hidden;
+	}
+	.lucky-box {
+		max-width: 750px;
+		min-height: 100%;
+		margin: 0 auto;
+		background: #ff6623;
+	}
+	.lucky-nav-bar {
+		width: 100%;
+		height: 40px;
+		line-height: 40px;
+		color: #f4f3b3;
+		position: fixed;
+		left: 0;
+		top: 0;
+		z-index: 10;
+	}
+	.lucky-shadow-bar {
+		width: 100%;
+		height: 36px;
+		background: #000;
+		opacity: 0.5;
+	}
+	.lucky-integral-area,
+	.lucky-rule-area {
+		font-size: 14px;
+		height: 14px;
+		line-height: 14px;
+		position: absolute;
+	}
+	.lucky-integral-area {
+		left: 15px;
+		top: 11px;
+	}
+	.lucky-rule-area {
+		padding: 3px 6px;
+		border: 1px solid #f4f3b3;
+		border-radius: 20px;
+		right: 15px;
+		top: 7px;
+	}
+	.lucky-rule-area a {
+		color: #f4f3b3;
+	}
+	.lucky-turntsble-bar {
+		width: 290px;
+		height: 290px;
+		border-radius: 50%;
+		position: relative;
+		top: -40px;
+		left: 50%;
+		margin-left: -145px;
+		box-shadow: 0px 0px 15px #431818;
+		background: url(http://cdn.rsscc.cn/guanggao/img/mall/active/turntable/turntable-flash.gif?a=b) no-repeat;
+		background-size: 290px 290px;
+	}
+	.lucky-turntsble-area {
+		width: 260px;
+		height: 260px;
+		border-radius: 50%;
+		background: yellow; /* 测试颜色 */
+		position: absolute;
+		left: 15px;
+		top: 15px;
+	}
+	.lucky-try-btn {
+		width: 171px;
+		height: 81px;
+		display: block;
+		margin: -20px auto 0;
+		background: url(http://cdn.rsscc.cn/guanggao/img/mall/active/turntable/turntable-btn.png?q=f) no-repeat;;
+		background-size: cover;
+	}
+	.lucky-show {
+		width: 80px;
+		padding: 10px;
+		text-indent: center;
+		text-decoration: underline;
+		color: #fff;
+		display: block;
+		margin: 5px auto 10px;
+	}
+	.lucky-scroll-bar {
+		width: 80%;
+		height: 34px;
+		padding-bottom: 10px;
+		margin: 0 auto;
+		position: relative;
+		background: url(http://cdn.rsscc.cn/guanggao/img/mall/active/turntable/turntable-bg.png?a=b) repeat-x;
+		background-size: 25px 34px;
+	}
+	.lucky-bg-left {
+		width: 6px;
+		height: 34px;
+		background: url(http://cdn.rsscc.cn/guanggao/img/mall/active/turntable/turntable-bg-left.png?a=b) no-repeat;
+		background-size: cover;
+		position: absolute;
+		left: -6px;
+		top: 0;
+	}
+	.lucky-bg-right {
+		width: 6px; 
+		height: 34px;
+		background: url(http://cdn.rsscc.cn/guanggao/img/mall/active/turntable/turntable-bg-right.png?a=b) no-repeat;
+		background-size: cover;
+		position: absolute;
+		right: -6px;
+		top: 0;
+	}
+	.lucky-scroll-area-fa {
+		overflow: hidden;
+	}
+	.lucky-scroll-area {
+		width: 400%; /* 测试宽度 */
+		height: 34px;
+	}
+	.lucky-scroll-text {
+		font-size: 14px;
+		line-height: 34px;
+		padding: 0 10px;
+		float: left;
+		color: #f4f3b3;
+		opacity: 0.8;
+	}
+	</style>
+</head>
+<body>
+	<section class="lucky-box">
+		<nav class="lucky-nav-bar">
+			<div class="lucky-shadow-bar"></div>
+			<p class="lucky-integral-area">当前积分：<span>50000</span></p>
+			<p class="lucky-rule-area"><a>抽奖规则</a></p>
+		</nav>
+		<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/turntable/lucky-top-bg.png?a=w">
+		<div class="lucky-turntsble-bar">
+			<div class="lucky-turntsble-area">
+				
+			</div>
+		</div>
+		<button class="lucky-try-btn"></button>	
+		<a class="lucky-show">奖品展示></a>
+		<div class="lucky-scroll-bar">
+			<b class="lucky-bg-left"></b>
+			<b class="lucky-bg-right"></b>
+			<div class="lucky-scroll-area-fa">
+				<ul class="lucky-scroll-area clearfix">
+					<li class="lucky-scroll-text fl">180****1850抽奖获得云悦职能秤</li>
+					<li class="lucky-scroll-text fl">180****1850抽奖获得云悦职能秤</li>
+					<li class="lucky-scroll-text fl">180****1850抽奖获得云悦职能秤</li>
+					<li class="lucky-scroll-text fl">180****1850抽奖获得云悦职能秤</li>
+				</ul>
+			</div>
+		</div>
+	</section>
+</body>
+</html>

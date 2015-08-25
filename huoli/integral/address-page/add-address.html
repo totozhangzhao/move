@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection"content="telephone=no">
+	<title>添加收货地址</title>
+	<link href="../css/global.css" rel="stylesheet" >
+	<link href="../css/index.css" rel="stylesheet" >
+</head>
+<body>
+	<section class="address-page-box">
+		<div class="address-username-bar border-b">
+			<label>收货人：</label><input type="text" placeholder="请输入中文姓名" class="address-username-insert" >
+		</div>
+		<div class="address-usertel-bar border-b">
+			<label>联系电话：</label><input type="text" placeholder="请输入收货人手机号码" class="address-usertel-insert"  >
+		</div>
+		<div class="address-option-bar border-b">
+			<div class="address-option-area border-b">
+				<label class="address-se-la">
+					<select class="address-option-se" disabled>
+						<option>请选择：省</option>
+						<option>河北</option>
+						<option>山东</option>
+					</select>
+				</label>
+			</div>
+			<div class="address-option-area border-b">
+				<label class="address-se-la border-l">
+					<select class="address-option-se">
+						<option>请选择：市</option>
+						<option>北京</option>
+						<option>天津</option>
+					</select>
+				</label>
+			</div>
+			<div class="address-option-area">
+				<label class="address-se-la border-l">
+					<select class="address-option-se">
+						<option>请选择：区/县</option>
+						<option>朝阳区</option>
+						<option>海淀区</option>
+					</select>
+				</label>
+			</div>
+		</div>
+		<div class="address-detail-bar border-b">
+			<label>详细地址：</label>
+			<textarea class="address-detail-insert"></textarea>
+		</div>
+		<div class="address-foot-box">
+			<a href="manage-address.html" class="address-foot-btn allow-color">保存并使用</a>
+			<!-- <a href="manage-address.html" class="address-foot-btn forbidden-color">保存并使用</a> -->
+		</div>
+	</section>
+</body>
+</html>

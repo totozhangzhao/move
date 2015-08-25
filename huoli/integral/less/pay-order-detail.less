@@ -1,0 +1,192 @@
+// 支付订单详情 2.0 start 
+
+.pay-order-detail-box {
+  min-height: @defaultHeight;
+  .bgColor(#f3f3f3);
+  .fontSize(14px);
+}
+.pay-order-detail-box .pay-status-bar {
+  .padding-width(0, 0, 293px, 0);
+}
+.pay-order-detail-box .pay-after-bar {
+  .padding-width(0, 0, 232px, 0);
+}
+.pay-order-detail-box .pay-after-bar .order-pay-bar {
+  display: none;
+}
+.pay-order-detail-box .pay-after-bar .goods-copyright-fix {
+  .margin-common(bottom, 0);
+}
+.pay-order-detail-box .goods-detail {
+  .padding-width(10px, 10px, 10px, 10px);
+  .pos();
+  .bgColor(#fff);
+}
+.pay-order-detail-box .goods-show-pic {
+  width: 70px;
+  height: 70px;
+  .borderRadius(4px);
+  .margin-common(right, 10px);
+}
+.pay-order-detail-box .trade-status {
+  width: 77px;
+  height: @commonHeight;
+  .lineHeight(22px);
+  text-align: right;
+  .padding-width(0, 7px, 0, 0);
+  .fontSize(12px);
+  .fontColor(#fff);
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/pay-status-sprite.png) no-repeat;
+  .bgSize(350px, 350px);
+  .pos(absolute, right, 0, bottom, 10px);
+}
+.pay-order-detail-box .trade-status-succ {
+  .bgPos(-94px, 0);
+}
+.pay-order-detail-box .trade-status-fail {
+  .bgPos(-188px, 0);
+}
+.pay-order-detail-box .trade-status-waiting {
+  .bgPos(0, 0);
+}
+.pay-order-detail-box .trade-status-confirm {
+  .bgPos(0, -32px);
+}
+.pay-order-detail-box .goods-detail p {
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pay-order-detail-box .goods-name {
+  .fontSize();
+  .fontColor(#111);
+}
+.pay-order-detail-box .goods-price {
+  font-family: @fontArial;
+  .fontSize(20px);
+  .lineHeight(20px);
+  .margin-common(top, 8px);
+  .fontColor(#f90);
+}
+.pay-order-detail-box .order-detail-info {
+  height: 36px;
+  .lineHeight(36px);
+  .padding-width();
+  .fontColor(#999);
+  .borderCommon(top, 1px, solid, #f3f3f3);
+  .bgColor(#fff);
+  .fontColor(#333);
+}
+.pay-order-detail-box .order-detail-info:last-child {
+  .borderCommon(bottom, 1px, solid, #f3f3f3);
+}
+.pay-order-detail-box .order-detail-num {
+  .fontColor(#333);
+}
+.pay-order-detail-box .order-exchange-bar {
+  .padding-width(20px, 5%, 20px, 5%);
+}
+.pay-order-detail-box .order-exchange-code {
+  .padding-width(15px, 15px, 5px, 15px);
+  .pos();
+  .borderCommon(top, 1px, solid, #ccc);
+  .borderCommon(left, 1px, solid, #ccc);
+  .borderCommon(right, 1px, solid, #ccc);
+  .borderCommon(bottom, 1px, solid, #ccc);
+  .bgColor(#fff);
+  .fontColor(#999);
+}
+.pay-order-detail-box .order-exchange-area {
+  width: 70%;
+}
+.pay-order-detail-box .order-exchange-text {
+  .fontSize(12px);
+  .lineHeight(20px);
+}
+.pay-order-detail-box .order-address-area {
+  .margin-common(bottom, 5px);
+}
+.pay-order-detail-box .order-address-area .order-exchange-text:last-child {
+  width: 75%;
+}
+.pay-order-detail-box .logistics-info {
+  .margin-common(right, 8px);
+  .fontColor(#2d6dbe);
+}
+.pay-order-detail-box .order-address-area + .order-exchange-text {
+  .pos();
+}
+.pay-order-detail-box .order-address-enter {
+  width: 8px;
+  height: 14px;
+  .pos(absolute, right, 5px, top, 50%);
+  .margin-common(top, -7px);
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png?a=b) no-repeat -170px -120px;
+  .bgSize();
+}
+.pay-order-detail-box .effective-area {
+  height: 36px;
+  .fontSize(12px);
+  .padding-width(0, 0, 0, 15px);
+  .pos(absolute, right, 15px, top, 50%);
+  .margin-common(top, -18px);
+  .borderCommon(left, 1px, solid, #ccc);
+}
+.pay-order-detail-box .arc-border {
+  width: 6px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  .margin-common(top, -6px);
+}
+.pay-order-detail-box .arc-border-left {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/order-bg-leftcircle.png) no-repeat;
+  .bgSize(6px, 12px);
+  left: -1px;
+}
+.pay-order-detail-box .arc-border-right {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/order-bg-rightcircle.png) no-repeat;
+  .bgSize(6px, 12px);
+  right: -1px;
+}
+.pay-order-detail-box .pic-border {
+  width: @defaultWidth;
+  height: 3px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/order-bg-address-boder.png) repeat-x;
+  position: absolute;
+  left: 0;
+}
+.pay-order-detail-box .pic-border-top {
+  top: -1px;
+}
+.pay-order-detail-box .pic-border-bottom {
+  bottom: -1px;
+}
+.pay-order-detail-box .number-color {
+  .fontColor(#f90);
+}
+.pay-order-detail-box .common-text {
+  .fontSize(12px);
+  .lineHeight(20px);
+}
+.pay-order-detail-box .use-method {
+  .padding-width(10px, 10px, 15px, 10px);
+  .bgColor(#fff);
+}
+.order-address-bar .order-exchange-area {
+  width: @defaultWidth;
+}
+.pay-order-detail-box .user-info {
+  .fontColor(#111);
+}
+.pay-order-detail-box .user-info:nth-child(1) {
+  .margin-common(right, 20px);
+}
+.pay-order-detail-box .big-font {
+  .fontSize();
+}
+.pay-order-detail-box .bigger-font {
+  .fontSize(18px);
+}
+// 支付订单详情 2.0 end 

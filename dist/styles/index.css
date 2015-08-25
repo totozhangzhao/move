@@ -1,0 +1,2193 @@
+@charset 'utf-8';
+.defaultNone {
+  outline: none;
+  border: none 0;
+}
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.container {
+  max-width: 750px;
+  min-height: 100%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: 'Microsoft Yahei';
+  font-size: 16px;
+  background-color: #ffffff;
+  color: #666666;
+}
+input,
+button {
+  outline: none;
+  border: none 0;
+}
+button {
+  background-color: none;
+}
+select {
+  outline: none;
+  border: none 0;
+  -webkit-appearance: none;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 0;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+textarea {
+  outline: none;
+  border: none 0;
+  resize: none;
+}
+option {
+  text-align: center;
+}
+.error-tip {
+  display: none;
+}
+.error-tip.active {
+  display: block;
+}
+.bold-tit {
+  font-weight: bold;
+}
+.color-a {
+  color: #0000ff;
+}
+.orange-color {
+  color: #ff9900;
+}
+.num-font {
+  font-family: 'Arial';
+}
+.num-color {
+  font-family: 'Arial';
+  font-size: 16px;
+  color: #ff9900;
+}
+.border {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.borderPseudo {
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.border:after {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.border:before {
+  position: absolute;
+  left: 0;
+  top: 0;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 1px;
+  background-color: #cccccc;
+  -webkit-transform: scaleY(0.5);
+  transform: scaleY(0.5);
+}
+.border-l {
+  border-image: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 0px 0px 1px;
+}
+.border-r {
+  border-image: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 1px 0px 0px;
+}
+.border-t {
+  border-image: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 2 0 stretch;
+  border-width: 1px 0px 0px 0px;
+}
+.border-b {
+  border-image: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 2 0 stretch;
+  border-width: 0px 0px 1px 0px;
+}
+.loading-box {
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+.loading-icon {
+  width: 36px;
+  height: 36px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -18px;
+  margin-top: -18px;
+}
+.info-box,
+.active-box,
+.order-box,
+.integral-box,
+.exchange-record-box,
+.integral-list-box,
+.pay-box,
+.pay-order-detail-box,
+.address-page-box,
+.delivery-box {
+  max-width: 750px;
+  min-height: 100%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.goods-copyright-fix {
+  margin-bottom: 60px;
+}
+.copyright-block {
+  width: 100%;
+  height: 231px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+}
+.copyright-bar {
+  width: 100%;
+  height: 100%;
+  line-height: 30px;
+  background-color: #f3f3f3;
+  text-align: center;
+  color: #999999;
+  font-size: 10px;
+  padding-top: 18px;
+  padding-right: 0;
+  padding-bottom: 18px;
+  padding-left: 0;
+}
+.filed-box {
+  width: 200px;
+  text-align: center;
+  font-size: 14px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  border-top: 1px solid #cccccc;
+}
+.filed-text {
+  width: 266px;
+  margin-top: 5px;
+  margin-right: auto;
+  margin-bottom: 5px;
+  margin-left: auto;
+  padding-top: 5px;
+  padding-right: 10px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  line-height: 22px;
+  border-top: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-radius: 4px;
+}
+.group-name {
+  font-family: 'Arial';
+}
+.home-page-box {
+  max-width: 750px;
+  min-height: 100%;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  font-size: 14px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.home-banner-bar,
+.home-banner-pic,
+.home-banner-pic img {
+  width: 100%;
+}
+.home-nav {
+  height: 40px;
+  line-height: 40px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  background-color: #ffffff;
+}
+.home-nav .home-record-btn {
+  height: 22px;
+  line-height: 22px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  margin-top: 9px;
+  border-radius: 10px;
+  color: #ffffff;
+  background-color: #4d9eeb;
+}
+.home-goods-bar {
+  background-color: #f3f3f3;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 231px;
+  padding-left: 0;
+}
+.home-goods-bar .num-color {
+  font-size: 12px;
+  color: #ffffff;
+}
+.home-show-area {
+  padding-top: 3px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+.home-recommend,
+.home-limit,
+.home-hot {
+  background-color: #ffffff;
+  margin-top: 3px;
+}
+.home-big-bar {
+  width: 44%;
+  height: 187px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.home-small-bar {
+  width: 55%;
+  height: 92px;
+}
+.home-common-tit {
+  height: 21px;
+}
+.home-common-tit-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 5px;
+}
+.home-recommend .home-common-tit {
+  color: #4d9eeb;
+}
+.home-recommend .home-value-common .home-value-p {
+  background-color: #4d9eeb;
+}
+.home-recommend .home-value-common .home-value-icon {
+  border-left: 10px solid #4d9eeb;
+}
+.home-hot .home-value-common .home-value-p {
+  background-color: #ffbe46;
+}
+.home-hot .home-value-common .home-value-icon {
+  border-left: 10px solid #ffbe46;
+}
+.home-limit .home-value-common .home-value-p {
+  background-color: #ff6533;
+}
+.home-limit .home-value-common .home-value-icon {
+  border-left: 10px solid #ff6533;
+}
+.home-recommend .home-common-tit-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -45px -87px;
+  background-size: 312px 280px;
+}
+.home-hot .home-common-tit {
+  color: #ffbe46;
+}
+.home-hot .home-common-tit-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -99px -85px;
+  background-size: 312px 280px;
+}
+.home-limit .home-common-tit {
+  color: #ff6533;
+}
+.home-limit .home-common-tit-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -71px -87px;
+  background-size: 312px 280px;
+}
+.home-recommend a,
+.home-hot a,
+.home-limit a {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  top: 0;
+  display: block;
+}
+.home-big-pic-bar {
+  position: absolute;
+  left: 50%;
+  bottom: 9px;
+  margin-left: -60px;
+}
+.home-show-text-bar {
+  width: 70%;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+.home-show-pic-bar {
+  width: 45%;
+  position: absolute;
+  right: 4%;
+  bottom: 15px;
+}
+.home-small-goods-pic {
+  width: 86px;
+}
+.home-goods-dt {
+  padding-top: 10px;
+  padding-right: 0;
+  padding-bottom: 10px;
+  padding-left: 0;
+}
+.home-filed-box {
+  width: 150px;
+  text-align: center;
+  font-size: 16px;
+  color: #999999;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+  border-top: 1px solid #cccccc;
+}
+.home-goods-area-son {
+  width: 49.5%;
+  height: 141px;
+  margin-bottom: 3px;
+  background-color: #ffffff;
+}
+.home-goods-area-son:nth-of-type(odd) {
+  float: left;
+  border-image: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 1px 0px 0px;
+}
+.home-goods-area-son:nth-of-type(even) {
+  float: right;
+  border-image: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 0px 0px 1px;
+}
+.home-text-bar {
+  width: 100%;
+  padding-top: 4px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+.home-pic-detail {
+  width: 95%;
+  font-size: 12px;
+  color: #999999;
+  line-height: 16px;
+  margin-bottom: 3px;
+}
+.home-big-pic-detail {
+  width: 95%;
+  font-size: 12px;
+  color: #999999;
+  line-height: 16px;
+  margin-top: 4px;
+  margin-right: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+}
+.home-small-pic-detail {
+  width: 60%;
+  max-height: 32px;
+  overflow: hidden;
+  font-size: 12px;
+  color: #999999;
+  line-height: 16px;
+  margin-top: 4px;
+  margin-right: 0;
+  margin-bottom: 5px;
+  margin-left: 0;
+}
+.home-text-bar-p {
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.home-value-common {
+  height: 16px;
+  line-height: 16px;
+  font-size: 12px;
+  color: #ffffff;
+}
+.home-value-p {
+  min-width: 24px;
+  height: 16px;
+  padding-top: 0;
+  padding-right: 8px;
+  padding-bottom: 0;
+  padding-left: 4px;
+}
+.home-value-money .home-value-p {
+  background-color: #4d9eeb;
+}
+.home-value-end .home-value-p {
+  background-color: #cccccc;
+}
+.home-value-point .home-value-p {
+  background-color: #ffbe46;
+}
+.home-value-point-money .home-value-p {
+  background-color: #ff6533;
+}
+.home-value-icon {
+  border-top: 8px dashed transparent;
+  border-bottom: 8px dashed transparent;
+  border-right: 8px dashed transparent;
+  border-left: 10px dashed transparent;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.home-value-icon:after {
+  width: 3px;
+  height: 3px;
+  display: block;
+  content: '';
+  position: absolute;
+  left: -10px;
+  top: -2px;
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.home-value-point-money .home-value-icon {
+  border-left: 10px solid #ff6533;
+}
+.home-value-money .home-value-icon {
+  border-left: 10px solid #4d9eeb;
+}
+.home-value-point .home-value-icon {
+  border-left: 10px solid #ffbe46;
+}
+.home-value-end .home-value-icon {
+  border-left: 10px solid #cccccc;
+}
+.home-value {
+  font-size: 10px;
+}
+.home-goods-pic {
+  width: 100px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+.home-big-goods-pic {
+  width: 120px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+.home-pic-bar {
+  padding-top: 12px;
+  padding-right: 0;
+  padding-bottom: 4px;
+  padding-left: 0;
+}
+.state-icon {
+  margin-left: 8px;
+  margin-top: -3px;
+  display: inline-block;
+  vertical-align: middle;
+}
+.state-limit {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -205px 0;
+  background-size: 312px 280px;
+}
+.state-out {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -244px 0;
+  background-size: 312px 280px;
+}
+.state-prize {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -283px 0;
+  background-size: 312px 280px;
+}
+.state-grab {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -166px 0;
+  background-size: 312px 280px;
+}
+.new-user {
+  width: 34px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat;
+  background-size: 312px 280px;
+}
+.old-user {
+  width: 34px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -44px 0;
+  background-size: 312px 280px;
+}
+.month-card {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -88px 0;
+  background-size: 312px 280px;
+}
+.quarter-card {
+  width: 29px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -127px 0;
+  background-size: 312px 280px;
+}
+.user-v1 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat 0 -29px;
+  background-size: 312px 280px;
+}
+.user-v2 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -50px -29px;
+  background-size: 312px 280px;
+}
+.user-v3 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -100px -29px;
+  background-size: 312px 280px;
+}
+.user-v4 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -150px -29px;
+  background-size: 312px 280px;
+}
+.user-v5 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -200px -29px;
+  background-size: 312px 280px;
+}
+.user-v6 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -250px -29px;
+  background-size: 312px 280px;
+}
+.user-v7 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat 0 -58px;
+  background-size: 312px 280px;
+}
+.user-v8 {
+  width: 40px;
+  height: 14px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -50px -58px;
+  background-size: 312px 280px;
+}
+.home-flight-area {
+  padding-top: 10px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+}
+.home-flight-son {
+  width: 48%;
+  height: 162px;
+  background-color: #ffffff;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.home-status-icon {
+  width: 45px;
+  height: 18px;
+  position: absolute;
+  left: 0;
+  top: 6px;
+}
+.home-daily-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png) no-repeat;
+  background-size: 320px 280px;
+}
+.home-user1-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png?a=b) no-repeat -55px 0;
+  background-size: 320px 280px;
+}
+.home-user2-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png?a=b) no-repeat -55px -28px;
+  background-size: 320px 280px;
+}
+.home-user3-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png?a=b) no-repeat -55px -56px;
+  background-size: 320px 280px;
+}
+.home-user4-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png?a=b) no-repeat -55px -84px;
+  background-size: 320px 280px;
+}
+.home-user5-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png?a=b) no-repeat -55px -112px;
+  background-size: 320px 280px;
+}
+.home-user6-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png?a=b) no-repeat -55px -140px;
+  background-size: 320px 280px;
+}
+.home-user7-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png?a=b) no-repeat -55px -168px;
+  background-size: 320px 280px;
+}
+.home-user8-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png?a=b) no-repeat -55px -196px;
+  background-size: 320px 280px;
+}
+.home-flight-son:nth-of-type(odd) {
+  float: left;
+  border-image: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 1px 0px 1px;
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: 5px;
+  margin-left: 5px;
+}
+.home-flight-son:nth-of-type(even) {
+  float: right;
+  border-image: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 1px 0px 1px;
+  margin-top: 0;
+  margin-right: 5px;
+  margin-bottom: 5px;
+  margin-left: 0;
+}
+.home-flightpic-bar {
+  padding-top: 25px;
+  padding-right: 0;
+  padding-bottom: 12px;
+  padding-left: 0;
+}
+.home-goods-flightpic {
+  width: 100px;
+  height: 64px;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+.home-flight-desc-bar {
+  height: 32px;
+  overflow: hidden;
+}
+.home-flight-desc {
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  line-height: 16px;
+}
+.home-flight-value-bar {
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+.home-currency-symbol {
+  font-size: 12px;
+  margin-right: 2px;
+}
+.home-cost,
+.home-cost-points {
+  font-size: 18px;
+  font-weight: 600;
+  font-family: 'Arial';
+}
+.home-points-icon {
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png) -110px 0 no-repeat;
+  background-size: 320px 280px;
+  margin-right: 2px;
+}
+.home-flight-points {
+  color: #ff9a00;
+}
+.home-plus-sign {
+  margin-top: 0;
+  margin-right: 2px;
+  margin-bottom: 0;
+  margin-left: 2px;
+}
+.home-flight-points .home-currency-symbol,
+.home-flight-points .home-cost,
+.home-flight-points .home-plus-sign {
+  display: none;
+}
+.home-flight-money,
+.home-flight-money-points {
+  color: #ff4000;
+}
+.home-flight-money .home-plus-sign,
+.home-flight-money .home-cost-points,
+.home-flight-money .home-points-icon {
+  display: none;
+}
+.home-flight-money-points .home-points-icon {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon-flight.png) -131px 0 no-repeat;
+  background-size: 320px 280px;
+}
+p {
+  word-break: break-all;
+}
+.active-pic-bar img {
+  width: 100%;
+}
+.active-bar {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 292px;
+  padding-left: 0;
+}
+.active-area {
+  padding-top: 12px;
+  padding-right: 16px;
+  padding-bottom: 5px;
+  padding-left: 16px;
+}
+.active-detail-tit {
+  height: 16px;
+  line-height: 16px;
+  border-left: 4px solid #e40031;
+  margin-top: 4px;
+  margin-right: 0;
+  margin-bottom: 4px;
+  margin-left: 0;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 4px;
+  color: #333333;
+}
+.address-tit {
+  width: 100%;
+  font-weight: normal;
+  font-size: 14px;
+  margin-top: 2px;
+  margin-right: 0;
+  margin-bottom: 2px;
+  margin-left: 0;
+}
+.address-tit-son {
+  height: 18px;
+  line-height: 18px;
+  color: #ffffff;
+  background-color: #4889db;
+  padding-top: 0;
+  padding-right: 2px;
+  padding-bottom: 0;
+  padding-left: 2px;
+  border-radius: 2px;
+}
+.text-red {
+  color: #ff0000;
+}
+.border-color {
+  border-color: #4889db;
+}
+.common-text {
+  font-size: 14px;
+  line-height: 20px;
+}
+.time-bar,
+.order-pay-bar,
+.goods-pay-bar {
+  width: 100%;
+  height: 60px;
+  line-height: 60px;
+  background-color: #f3f3f3;
+  border-top: 1px solid #d1d1d1;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+}
+.time-area,
+.order-pay-bar .order-pay-area,
+.goods-pay-bar .goods-pay-area {
+  height: 100%;
+}
+.time-area {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.scoring-bar {
+  margin-left: 12px;
+}
+.user-flow {
+  width: 210px;
+  margin-top: 10px;
+  margin-right: auto;
+  margin-bottom: 10px;
+  margin-left: auto;
+}
+.count-down {
+  margin-right: 10px;
+}
+.operate-btn,
+.order-pay-bar .order-pay-btn,
+.goods-pay-bar .goods-pay-btn {
+  text-align: center;
+  padding-top: 10px;
+  padding-right: 15px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  font-size: 18px;
+  line-height: 18px;
+  border-radius: 3px;
+  margin-right: 20px;
+  margin-top: 12px;
+  color: #ffffff;
+}
+.operate-btn {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.allow-color {
+  background-color: #4889db;
+}
+.forbidden-color {
+  background-color: #cccccc;
+}
+.scoring-num {
+  font-family: 'Arial';
+  font-size: 22px;
+  color: #ff9900;
+}
+.time-num {
+  width: 20px;
+  text-align: center;
+  display: inline-block;
+  height: 24px;
+  line-height: 24px;
+  border-radius: 5px;
+  margin-top: 0;
+  margin-right: 2px;
+  margin-bottom: 0;
+  margin-left: 2px;
+  background-color: #cccccc;
+  color: #ffffff;
+}
+.common-shadow {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 5;
+  display: none;
+}
+.flip-box,
+.login-flip-box,
+.del-tip-box {
+  width: 80%;
+  height: 150px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 4px;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  margin-left: -40%;
+  margin-top: -75px;
+  z-index: 6;
+  display: none;
+}
+.del-tip-box {
+  display: block;
+}
+.login-flip-h {
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  text-align: center;
+  height: 36px;
+  line-height: 36px;
+  font-size: 18px;
+  color: #ffffff;
+  background-color: #4889db;
+}
+.login-flip-text {
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 15px;
+  padding-left: 15px;
+}
+.login-flip-text-no {
+  text-align: center;
+  padding-top: 25px;
+  padding-right: 15px;
+  padding-bottom: 25px;
+  padding-left: 15px;
+}
+.login-btn-box {
+  text-align: center;
+}
+.login-no,
+.login-yes {
+  min-width: 100px;
+  padding-top: 5px;
+  padding-right: 18px;
+  padding-bottom: 5px;
+  padding-left: 18px;
+  color: #ffffff;
+  margin-top: 0;
+  margin-right: 8px;
+  margin-bottom: 0;
+  margin-left: 8px;
+  border-radius: 2px;
+}
+.flip-info,
+.del-info {
+  margin-top: 30px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+.del-info {
+  margin-bottom: 30px;
+}
+.flip-info-bar {
+  height: 48px;
+  margin-bottom: 16px;
+}
+.exchange-button {
+  min-width: 88px;
+  display: inline-block;
+  border-radius: 3px;
+  padding-top: 4px;
+  padding-right: 12px;
+  padding-bottom: 4px;
+  padding-left: 12px;
+  margin-top: 0;
+  margin-right: 10px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  color: #ffffff;
+}
+.del-common-button {
+  display: inline-block;
+  margin-top: 0;
+  margin-right: 10px;
+  margin-bottom: 0;
+  margin-left: 10px;
+  color: #ffffff;
+  padding-top: 4px;
+  padding-right: 28px;
+  padding-bottom: 4px;
+  padding-left: 28px;
+}
+.flip-tip {
+  font-size: 12px;
+  padding-top: 0;
+  padding-right: 16px;
+  padding-bottom: 0;
+  padding-left: 16px;
+}
+.flip-go-check {
+  margin-top: 15px;
+}
+.integral-list-num {
+  height: 24px;
+  padding-top: 30px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  color: #4889db;
+}
+.group-introduce {
+  padding-top: 20px;
+  padding-right: 0;
+  padding-bottom: 5px;
+  padding-left: 0;
+}
+.group-introduce-bar {
+  margin-top: 20px;
+}
+.order-box {
+  background-color: #f3f3f3;
+}
+.pay-order-box {
+  margin-bottom: 10px;
+}
+.order-goods-box {
+  font-size: 14px;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 292px;
+  padding-left: 0;
+}
+.order-goods-bar {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  background-color: #ffffff;
+}
+.order-goods-bar a {
+  color: #666666;
+}
+.pay-common-text {
+  font-family: 'Arial';
+  color: #666666;
+}
+.pay-serial a {
+  color: #666666;
+}
+.pay-cost {
+  color: #333333;
+}
+.chit-pic {
+  width: 64px;
+  height: 64px;
+  border-radius: 4px;
+}
+.order-goods-text {
+  margin-left: 10px;
+}
+.actually-pay {
+  text-align: right;
+  font-family: 'Arial';
+}
+.exchange-code-bar {
+  padding-top: 12px;
+  padding-right: 10px;
+  padding-bottom: 12px;
+  padding-left: 10px;
+  background-color: #ffffff;
+  margin-bottom: 10px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.order-text-bar {
+  width: 75%;
+}
+.order-box .enter-btn {
+  width: 9px;
+  height: 18px;
+  margin-top: 22px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/arrow-icon.png) no-repeat;
+  background-size: cover;
+}
+.exchange-code {
+  text-align: center;
+  font-size: 18px;
+  padding-top: 8px;
+  padding-right: 10px;
+  padding-bottom: 8px;
+  padding-left: 10px;
+  color: #ffffff;
+}
+.exchange-code-word {
+  min-width: 100px;
+  display: inline-block;
+  background-color: #feb220;
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 3px;
+}
+.copy-code {
+  font-size: 10px;
+  color: #cccccc;
+  text-align: center;
+}
+.use-method {
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+.use-method-tit {
+  height: 16px;
+  margin-top: 15px;
+  margin-right: 0;
+  margin-bottom: 10px;
+  margin-left: 0;
+  font-size: 16px;
+  color: #333333;
+  line-height: 16px;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 5px;
+  border-left: 4px solid #4889db;
+}
+.use-method-text {
+  font-size: 14px;
+}
+.pay-status-box {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.pay-status {
+  font-size: 16px;
+  line-height: 26px;
+  color: #333333;
+}
+.yes-icon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 10px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/h2-pay-sprite.png) no-repeat 0 -115px;
+  background-size: 350px 350px;
+}
+.pay-status-tip {
+  width: 73px;
+  height: 73px;
+  margin-top: 10px;
+  margin-right: 20px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/h2-pay-sprite.png) no-repeat;
+  background-size: 350px 350px;
+}
+.order-pay-btn {
+  background-color: #4889db;
+}
+.pay-status-succ .pay-status-text {
+  color: #4889db;
+}
+.pay-status-succ .pay-status-show {
+  background-position: 0 -32px;
+}
+.pay-status-unfinished .pay-status-text {
+  color: #f31818;
+}
+.pay-status-unfinished .pay-status-show {
+  background-position: -81px -32px;
+}
+.pay-status-fail .pay-status-text {
+  color: #333333;
+}
+.pay-status-fail .pay-status-show {
+  background-position: 163px -32px;
+}
+.pay-status-cancel .pay-status-text {
+  color: #333333;
+}
+.pay-status-cancel .pay-status-show {
+  background-position: -245px -32px;
+}
+.integral-bar {
+  color: #333333;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+.question-bar {
+  line-height: 36px;
+}
+.question-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 12px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/question-icon.png) no-repeat;
+  background-size: cover;
+}
+.answer-icon {
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  margin-top: 6px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/answer-icon.png) no-repeat;
+  background-size: cover;
+}
+.answer-text {
+  font-size: 14px;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 28px;
+  line-height: 28px;
+}
+.record-area,
+.integral-list-area {
+  height: 84px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  border-bottom: 1px solid #cccccc;
+  margin-bottom: -1px;
+}
+.record-area {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.record-pic-bar,
+.list-pic-bar {
+  margin-top: 10px;
+}
+.record-text-bar,
+.list-text-bar {
+  margin-left: 10px;
+  margin-top: 10px;
+}
+.record-text-bar {
+  width: 70%;
+}
+.record-text-tit {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.record-text-det,
+.record-text-time {
+  font-size: 14px;
+  line-height: 20px;
+}
+.record-need-integral {
+  margin-top: 10px;
+  margin-right: 35px;
+}
+.record-text-time {
+  color: #999999;
+}
+.order-bar {
+  margin-top: 8px;
+}
+.order-bar p {
+  height: 16px;
+  line-height: 16px;
+}
+.order-status-time {
+  color: #999999;
+  font-size: 14px;
+}
+.enter-btn {
+  width: 9px;
+  height: 18px;
+  margin-top: 28px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/arrow-icon.png) no-repeat;
+  background-size: cover;
+}
+.exchange-empty-box {
+  max-width: 750px;
+  display: none;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+.exchange-empty-pic {
+  width: 104px;
+  height: 104px;
+  margin-top: 128px;
+  margin-right: auto;
+  margin-bottom: 36px;
+  margin-left: auto;
+}
+.exchange-empty-text {
+  text-align: center;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 30px;
+  padding-left: 0;
+}
+.order-status {
+  width: 76px;
+  text-align: center;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  color: #ffffff;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/h2-pay-sprite.png) no-repeat;
+  background-size: 350px 350px;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+.order-status-succ {
+  background-position: 0 0;
+}
+.order-status-waitsure {
+  background-position: -86px 0;
+}
+.order-status-waitpay {
+  background-position: -172px 0;
+}
+.order-status-fail {
+  background-position: -258px 0;
+}
+.insert-bar {
+  width: 90%;
+  margin-top: 24px;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+.pay-box {
+  background-color: #f3f3f3;
+}
+.pay-pic-bar img {
+  width: 100%;
+}
+.insert-bar-son {
+  height: 72px;
+}
+.authcode-insert-bar {
+  height: 68px;
+}
+.insert-bar-son .common-text {
+  height: 26px;
+  line-height: 26px;
+  font-size: 12px;
+}
+.common-insert-area,
+.authcode-insert-area {
+  padding-top: 8px;
+  padding-right: 0;
+  padding-bottom: 8px;
+  padding-left: 0;
+  background-color: #ffffff;
+  border-radius: 4px;
+}
+.authcode-insert-area {
+  padding-top: 6px;
+  padding-right: 0;
+  padding-bottom: 6px;
+  padding-left: 0;
+}
+.authcode-insert-area {
+  width: 56%;
+}
+.authcode-get-area {
+  width: 40%;
+  border-radius: 4px;
+}
+.authcode-get {
+  width: 100%;
+  text-align: center;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 4px;
+}
+.insert-icon {
+  /*width: 15px;
+  height: 30px;*/
+  width: 19px;
+  height: 30px;
+  vertical-align: middle;
+  display: inline-block;
+  /*.margin-width(0, 15px, 0, 15px);*/
+  margin-top: 0;
+  margin-right: 13px;
+  margin-bottom: 0;
+  margin-left: 13px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png?a=r) no-repeat;
+  background-position: -90px -168px;
+  background-size: 312px 280px;
+}
+.phone-icon {
+  background-position: 3px -172px;
+}
+.psw-icon {
+  background-position: -21px -171px;
+}
+.re-psw-icon {
+  background-position: -44px -171px;
+}
+.realname-icon {
+  background-position: -144px -170px;
+}
+.idcard-icon {
+  background-position: -117px -169px;
+}
+.email-icon {
+  background-position: -68px -168px;
+}
+.common-insert {
+  width: 70%;
+  padding-top: 7px;
+  padding-right: 0;
+  padding-bottom: 7px;
+  padding-left: 10px;
+  line-height: 16px;
+  border-left: 1px solid #cccccc;
+  border-radius: 0;
+}
+.authcode-insert {
+  width: 100%;
+  line-height: 16px;
+  padding-top: 7px;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 25px;
+}
+.insert-tit {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 55px;
+}
+.insert-bar-son .authcode-tit {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 25px;
+}
+.disable-color {
+  background-color: #cccccc;
+}
+.able-color,
+.authcode-get.active {
+  background-color: #feb220;
+}
+.authcode-get {
+  background-color: #cccccc;
+  color: #999999;
+}
+.authcode-get.active {
+  color: #ffffff;
+}
+.to-receive-bar {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 40px;
+  padding-left: 0;
+}
+.to-receive {
+  width: 100%;
+  text-align: center;
+  height: 42px;
+  line-height: 42px;
+  border-radius: 4px;
+  color: #ffffff;
+  background-color: #feb220;
+}
+.pay-order-detail-box {
+  min-height: 100%;
+  background-color: #f3f3f3;
+  font-size: 14px;
+}
+.pay-order-detail-box .pay-status-bar {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 293px;
+  padding-left: 0;
+}
+.pay-order-detail-box .pay-after-bar {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 232px;
+  padding-left: 0;
+}
+.pay-order-detail-box .pay-after-bar .order-pay-bar {
+  display: none;
+}
+.pay-order-detail-box .pay-after-bar .goods-copyright-fix {
+  margin-bottom: 0;
+}
+.pay-order-detail-box .goods-detail {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+  position: relative;
+  left: 0;
+  top: 0;
+  background-color: #ffffff;
+}
+.pay-order-detail-box .goods-show-pic {
+  width: 70px;
+  height: 70px;
+  border-radius: 4px;
+  margin-right: 10px;
+}
+.pay-order-detail-box .trade-status {
+  width: 77px;
+  height: 22px;
+  line-height: 22px;
+  text-align: right;
+  padding-top: 0;
+  padding-right: 7px;
+  padding-bottom: 0;
+  padding-left: 0;
+  font-size: 12px;
+  color: #ffffff;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/pay-status-sprite.png) no-repeat;
+  background-size: 350px 350px;
+  position: absolute;
+  right: 0;
+  bottom: 10px;
+}
+.pay-order-detail-box .trade-status-succ {
+  background-position: -94px 0;
+}
+.pay-order-detail-box .trade-status-fail {
+  background-position: -188px 0;
+}
+.pay-order-detail-box .trade-status-waiting {
+  background-position: 0 0;
+}
+.pay-order-detail-box .trade-status-confirm {
+  background-position: 0 -32px;
+}
+.pay-order-detail-box .goods-detail p {
+  width: 70%;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.pay-order-detail-box .goods-name {
+  font-size: 16px;
+  color: #111111;
+}
+.pay-order-detail-box .goods-price {
+  font-family: 'Arial';
+  font-size: 20px;
+  line-height: 20px;
+  margin-top: 8px;
+  color: #ff9900;
+}
+.pay-order-detail-box .order-detail-info {
+  height: 36px;
+  line-height: 36px;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  color: #999999;
+  border-top: 1px solid #f3f3f3;
+  background-color: #ffffff;
+  color: #333333;
+}
+.pay-order-detail-box .order-detail-info:last-child {
+  border-bottom: 1px solid #f3f3f3;
+}
+.pay-order-detail-box .order-detail-num {
+  color: #333333;
+}
+.pay-order-detail-box .order-exchange-bar {
+  padding-top: 20px;
+  padding-right: 5%;
+  padding-bottom: 20px;
+  padding-left: 5%;
+}
+.pay-order-detail-box .order-exchange-code {
+  padding-top: 15px;
+  padding-right: 15px;
+  padding-bottom: 5px;
+  padding-left: 15px;
+  position: relative;
+  left: 0;
+  top: 0;
+  border-top: 1px solid #cccccc;
+  border-left: 1px solid #cccccc;
+  border-right: 1px solid #cccccc;
+  border-bottom: 1px solid #cccccc;
+  background-color: #ffffff;
+  color: #999999;
+}
+.pay-order-detail-box .order-exchange-area {
+  width: 70%;
+}
+.pay-order-detail-box .order-exchange-text {
+  font-size: 12px;
+  line-height: 20px;
+}
+.pay-order-detail-box .order-address-area {
+  margin-bottom: 5px;
+}
+.pay-order-detail-box .order-address-area .order-exchange-text:last-child {
+  width: 75%;
+}
+.pay-order-detail-box .logistics-info {
+  margin-right: 8px;
+  color: #2d6dbe;
+}
+.pay-order-detail-box .order-address-area + .order-exchange-text {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.pay-order-detail-box .order-address-enter {
+  width: 8px;
+  height: 14px;
+  position: absolute;
+  right: 5px;
+  top: 50%;
+  margin-top: -7px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png?a=b) no-repeat -170px -120px;
+  background-size: 312px 280px;
+}
+.pay-order-detail-box .effective-area {
+  height: 36px;
+  font-size: 12px;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 15px;
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  margin-top: -18px;
+  border-left: 1px solid #cccccc;
+}
+.pay-order-detail-box .arc-border {
+  width: 6px;
+  height: 12px;
+  position: absolute;
+  top: 50%;
+  margin-top: -6px;
+}
+.pay-order-detail-box .arc-border-left {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/order-bg-leftcircle.png) no-repeat;
+  background-size: 6px 12px;
+  left: -1px;
+}
+.pay-order-detail-box .arc-border-right {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/order-bg-rightcircle.png) no-repeat;
+  background-size: 6px 12px;
+  right: -1px;
+}
+.pay-order-detail-box .pic-border {
+  width: 100%;
+  height: 3px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/order-bg-address-boder.png) repeat-x;
+  position: absolute;
+  left: 0;
+}
+.pay-order-detail-box .pic-border-top {
+  top: -1px;
+}
+.pay-order-detail-box .pic-border-bottom {
+  bottom: -1px;
+}
+.pay-order-detail-box .number-color {
+  color: #ff9900;
+}
+.pay-order-detail-box .common-text {
+  font-size: 12px;
+  line-height: 20px;
+}
+.pay-order-detail-box .use-method {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 15px;
+  padding-left: 10px;
+  background-color: #ffffff;
+}
+.order-address-bar .order-exchange-area {
+  width: 100%;
+}
+.pay-order-detail-box .user-info {
+  color: #111111;
+}
+.pay-order-detail-box .user-info:nth-child(1) {
+  margin-right: 20px;
+}
+.pay-order-detail-box .big-font {
+  font-size: 16px;
+}
+.pay-order-detail-box .bigger-font {
+  font-size: 18px;
+}
+.address-page-box {
+  color: #666666;
+  background-color: #f3f3f3;
+}
+.address-username-bar,
+.address-usertel-bar,
+.address-option-bar {
+  height: 42px;
+  line-height: 42px;
+  background-color: #ffffff;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.address-option-se {
+  width: 100%;
+  height: 100%;
+  color: #666666;
+  background-color: #ffffff;
+}
+@media only screen and (max-width: 374px) {
+  .address-option-area {
+    width: 100%;
+    padding-top: 0;
+    padding-right: 10px;
+    padding-bottom: 0;
+    padding-left: 10px;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .address-option-bar .border-l {
+    border-width: 0;
+  }
+  .address-option-bar {
+    height: 126px;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+    color: #666666;
+    background-color: #ffffff;
+  }
+  .address-option-area:after {
+    content: '';
+    width: 13px;
+    height: 7px;
+    background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -145px -120px;
+    background-size: 312px 280px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+  }
+  .address-se-la {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 0;
+  }
+}
+@media only screen and (min-width: 375px) {
+  .address-option-bar {
+    display: flex;
+    display: -webkit-flex;
+  }
+  .address-option-area {
+    flex: 1;
+    -webkit-flex: 1;
+    position: relative;
+    left: 0;
+    top: 0;
+  }
+  .address-option-bar .border-b {
+    border-width: 0;
+  }
+  .address-option-area:after {
+    content: '';
+    width: 13px;
+    height: 7px;
+    background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -145px -120px;
+    background-size: 312px 280px;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -3px;
+  }
+  .address-option-area:nth-child(3):after {
+    right: -2px;
+  }
+  .address-se-la {
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 6px;
+  }
+  .address-option-area:nth-child(1) .address-se-la {
+    width: 100%;
+    position: relative;
+    left: 0;
+    top: 0;
+    padding-top: 0;
+    padding-right: 0;
+    padding-bottom: 0;
+    padding-left: 6px;
+  }
+}
+.address-option-se[disabled] {
+  color: #cccccc;
+}
+.address-detail-bar {
+  line-height: 42px;
+  background-color: #ffffff;
+  padding-top: 0;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+}
+.address-detail-insert {
+  width: 66%;
+  height: 63px;
+  padding-top: 9px;
+  padding-right: 8px;
+  padding-bottom: 9px;
+  padding-left: 8px;
+}
+.address-username-insert,
+.address-usertel-insert {
+  width: 70%;
+}
+.address-foot-box {
+  width: 100%;
+  height: 40px;
+  margin-top: 20px;
+}
+.address-foot-btn {
+  width: 90%;
+  text-align: center;
+  display: block;
+  height: 40px;
+  line-height: 40px;
+  border-radius: 5px;
+  font-size: 18px;
+  color: #ffffff;
+  margin-top: 0;
+  margin-right: auto;
+  margin-bottom: 0;
+  margin-left: auto;
+}
+.address-foot-box .forbidden-color {
+  color: #999999;
+}
+.address-exist-fatherbar {
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 40px;
+  padding-left: 0;
+}
+.address-exist-bar {
+  font-size: 14px;
+  line-height: 34px;
+}
+.address-exist-area {
+  padding-top: 4px;
+  padding-right: 10px;
+  padding-bottom: 0;
+  padding-left: 10px;
+  margin-bottom: 10px;
+  position: relative;
+  left: 0;
+  top: 0;
+  background-color: #ffffff;
+}
+.confirm-order .address-exist-area {
+  padding-top: 10px;
+  padding-right: 10px;
+  padding-bottom: 10px;
+  padding-left: 10px;
+}
+.address-exist-info {
+  font-size: 16px;
+  color: #111111;
+}
+.address-exist-username {
+  width: 35%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.address-exist-usertel {
+  margin-left: 5px;
+}
+.address-exist-nameicon {
+  width: 15px;
+  height: 15px;
+  display: inline-block;
+  margin-right: 10px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -99px -120px;
+  background-size: 312px 280px;
+}
+.address-exist-telicon {
+  width: 11px;
+  height: 17px;
+  display: inline-block;
+  margin-right: 10px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -124px -120px;
+  background-size: 312px 280px;
+  position: relative;
+  left: 0;
+  top: 2px;
+}
+.address-exist-text {
+  line-height: 24px;
+  padding-top: 0;
+  padding-right: 0;
+  padding-bottom: 6px;
+  padding-left: 0;
+}
+.address-page-box .pay-order-box {
+  margin-top: 10px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.address-page-box .order-goods-text {
+  font-size: 14px;
+  font-family: 'Arial';
+}
+.address-page-box .pic-detail {
+  height: 40px;
+  max-height: 40px;
+  overflow: hidden;
+  line-height: 20px;
+  font-size: 16px;
+  color: #111111;
+}
+.address-page-box .pic-detail-tip {
+  margin-top: 4px;
+}
+.address-page-box .actually-pay {
+  font-size: 16px;
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+}
+.address-control-bar {
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.address-set-area {
+  height: 100%;
+}
+.address-radio-group {
+  position: relative;
+  left: 0;
+  top: 0;
+  height: 14px;
+}
+.address-custom-common {
+  width: 13px;
+  height: 13px;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -69px -146px;
+  background-size: 312px 280px;
+}
+.address-radio-group input[type="radio"]:checked + .address-custom-common {
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -46px -146px;
+  background-size: 312px 280px;
+}
+.address-set-inp {
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.01;
+}
+.address-set-default {
+  margin-left: 20px;
+}
+.address-edit-area {
+  position: absolute;
+  right: 70px;
+  top: 0;
+}
+.address-delete-area {
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+.address-edit-icon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat -23px -146px;
+  background-size: 312px 280px;
+  margin-right: 6px;
+}
+.address-delete-icon {
+  width: 13px;
+  height: 13px;
+  display: inline-block;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png) no-repeat 0 -146px;
+  background-size: 312px 280px;
+  margin-right: 6px;
+}
+.delivery-nav {
+  height: 40px;
+  line-height: 40px;
+}
+.delivery-info {
+  height: 100%;
+  text-align: center;
+  color: #ffffff;
+}
+.delivery-info:nth-child(1) {
+  width: 40%;
+  background-color: #88cdfe;
+}
+.delivery-info:nth-child(2) {
+  width: 60%;
+  background-color: #67baf7;
+}
+.delivery-status {
+  position: relative;
+  left: 0;
+  top: 0;
+}
+.delivery-status:nth-child(even) {
+  background-color: #f6f6f6;
+}
+.delivery-status:nth-child(odd) {
+  background-color: #eeeeee;
+}
+.delivery-time-pos {
+  padding-top: 18px;
+  padding-right: 18px;
+  padding-bottom: 18px;
+  padding-left: 18px;
+  height: 100%;
+}
+.delivery-time-pos:nth-child(1) {
+  width: 40%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+.delivery-time-pos:nth-child(1) div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-top: -20px;
+}
+.delivery-time-pos:nth-child(2) {
+  width: 60%;
+  font-size: 14px;
+  line-height: 24px;
+}
+.delivery-time-pos p {
+  text-align: center;
+}
+.delivery-time-pos p:nth-child(1) {
+  font-size: 12px;
+}
+.delivery-line {
+  width: 3px;
+  height: 100%;
+  background-color: #cccccc;
+  position: absolute;
+  left: 40%;
+  top: 0;
+}
+.delivery-line-finish {
+  width: 3px;
+  height: 50%;
+  background-color: #cccccc;
+  position: absolute;
+  left: 40%;
+  top: 0;
+}
+.delivery-status:nth-child(1) .delivery-line {
+  height: 50%;
+  top: 50%;
+}
+.delivery-roll {
+  width: 10px;
+  height: 10px;
+  background-color: #67baf7;
+  border-radius: 50%;
+  position: absolute;
+  left: 40%;
+  top: 50%;
+  margin-left: -5px;
+  margin-top: -5px;
+}
+.delivery-status:nth-child(1) .delivery-roll {
+  top: 0;
+}
+.delivery-line-finish .delivery-roll {
+  width: 0;
+}
+.delivery-bg {
+  width: 16px;
+  height: 16px;
+  background-color: #ffffff;
+  border-left: 1px solid #f3f3f3;
+  border-top: 1px solid #f3f3f3;
+  border-right: 1px solid #f3f3f3;
+  border-bottom: 1px solid #f3f3f3;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  margin-left: -7px;
+  margin-top: -8px;
+}
+.delivery-status:nth-child(1) .delivery-bg {
+  top: 0;
+}
+.delivery-line-finish .delivery-bg {
+  width: 18px;
+  height: 18px;
+  top: 100%;
+  margin-left: -8px;
+  margin-top: -9px;
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/index-icon.png?a=b) no-repeat -93px -147px;
+  background-size: 312px 280px;
+}

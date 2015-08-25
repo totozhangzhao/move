@@ -1,0 +1,303 @@
+@charset 'utf-8';
+
+// 定义变量
+@defaultWidth: 100%;
+@defaultHeight: 100%;
+@commonHeight: 22px;
+@fontFamily: 'Microsoft Yahei';
+@fontSize: 16px;
+@fontWeight: bold;
+@fontArial: 'Arial';
+.defaultNone {
+  outline: none;
+  border: none 0;
+}
+
+// 设置字体大小
+.fontSize(@fontSize: 16px) {
+  font-size: @fontSize;
+}
+
+// 设置字体颜色
+.fontColor(@fontColor) {
+  color: @fontColor;
+}
+
+// 设置行高
+.lineHeight(@height) {
+  line-height: @height;
+}
+
+// 设置背景颜色
+.bgColor(@bgColor) {
+  background-color: @bgColor;
+}
+
+// 设置背景图片缩放尺寸
+.bgSize(@bgSizeW:312px, @bgSizeH:280px) {
+  background-size: @bgSizeW @bgSizeH;
+}
+
+// 设置图片精灵位置
+.bgPos(@posX, @posY) {
+  background-position: @posX @posY;
+}
+
+// 设置border
+.borderCommon(@direction, @width, @style, @color) {
+  border-@{direction}: @width @style @color;	
+}
+
+// 设置border-rasius
+.borderRadius(@borderRadius) {
+  border-radius: @borderRadius;
+}
+
+// 设置padding(0, 0, 0, 0)
+.padding-width(@topWidth: 0, @rightWidth: 10px, @bottomWidth: 0, @leftWidth: 10px) {
+  padding-top: @topWidth;
+  padding-right: @rightWidth;
+  padding-bottom: @bottomWidth; 
+  padding-left: @leftWidth;
+}
+
+// 设置padding(left, 10px)
+.padding-common(@direction, @width) {
+  padding-@{direction}: @width;
+}
+
+// 设置margin(0, 0, 0, 0)
+.margin-width(@topWidth: 0, @rightWidth: 10px, @bottomWidth: 0, @leftWidth: 10px) {
+  margin-top: @topWidth;
+  margin-right: @rightWidth;
+  margin-bottom: @bottomWidth; 
+  margin-left: @leftWidth;
+}
+
+// 设置margin(left, 10px)
+.margin-common(@direction, @width) {
+  margin-@{direction}: @width;
+}
+
+// 设置定位
+.pos(@posAttr: relative, @posDirection: left, @posValue: 0, @posDirection2: top, @posValue2: 0) {
+  position: @posAttr;
+  @{posDirection}: @posValue;
+  @{posDirection2}: @posValue2;
+}
+
+// 省略号
+.ellipsis {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+// 最外层section公用
+.container {
+  max-width: 750px;
+  min-height: @defaultHeight;
+  .margin-width(0, auto, 0, auto);
+  .pos();
+}
+
+html,
+body {
+  height: @defaultHeight;
+}
+body {
+  font-family: @fontFamily;
+  .fontSize();
+  .bgColor(#fff);
+  .fontColor(#666);
+}
+input,
+button {
+  .defaultNone;
+}
+button {
+  .bgColor(none);
+}
+select {
+  .defaultNone;
+  -webkit-appearance: none; 
+  .margin-width(0, 0, 0, 0);
+  .padding-width(0, 0, 0, 0);
+}
+textarea {
+  .defaultNone;
+  resize: none;
+}
+option {
+  text-align: center;
+}
+.error-tip {
+  display: none;
+}
+.error-tip.active {
+  display: block;
+}
+
+// 字体加粗
+.bold-tit {
+  font-weight: @fontWeight;
+}
+
+// 蓝色
+.color-a {
+  .fontColor(#0000ff);
+}
+
+// 橙色
+.orange-color {
+  .fontColor(#f90);
+}
+
+// 数字和字母字体
+.num-font {
+  font-family: @fontArial;
+}
+
+// 数字字体及颜色
+.num-color {
+  font-family: @fontArial;
+  .fontSize();
+  .fontColor(#f90);
+}
+
+// 边框 
+.border { 
+  .pos();
+}
+
+// border伪类共用 
+.borderPseudo {
+  content: ''; 
+  display:block; 
+  width: @defaultWidth; 
+  height: 1px;  
+  .bgColor(#ccc);
+  -webkit-transform: scaleY(0.5); 
+  transform: scaleY(0.5);
+}
+.border:after {  
+  .pos(absolute, left, 0, bottom, 0);
+  .borderPseudo;
+}
+.border:before { 
+  .pos(absolute, left, 0, top, 0);
+  .borderPseudo;
+}
+.border-l {
+  border-image:url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 0px 0px 1px;
+}
+.border-r {
+  border-image:url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 0 2 stretch;
+  border-width: 0px 1px 0px 0px;
+}
+.border-t {
+  border-image:url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 2 0 stretch;
+  border-width: 1px 0px 0px 0px;
+}
+.border-b {
+  border-image:url(http://cdn.rsscc.cn/guanggao/img/mall/icon/border-line2.png) 2 0 stretch;
+  border-width: 0px 0px 1px 0px;
+}
+.loading-box {
+  display: none;
+  width: @defaultWidth;
+  height: @defaultHeight;
+  .pos(fixed, left, 0, top, 0);
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 9999;
+}
+.loading-icon {
+  width: 36px;
+  height: 36px;
+  .pos(absolute, left, 50%, top, 50%);
+  .margin-common(left, -18px);
+  .margin-common(top, -18px);
+}
+.info-box, 
+.active-box, 
+.order-box,
+.integral-box,
+.exchange-record-box,
+.integral-list-box,
+.pay-box,
+.pay-order-detail-box,
+.address-page-box,
+.delivery-box {
+  .container;
+}
+.goods-copyright-fix {
+  .margin-common(bottom, 60px);
+}
+.copyright-block {
+  width: @defaultWidth;
+  height: 231px;
+  .pos(absolute, left, 0, bottom, 0);
+}
+.copyright-bar {
+  width: @defaultWidth;
+  height: @defaultHeight;
+  .lineHeight(30px);
+  .bgColor(#f3f3f3); 
+  text-align: center;
+  .fontColor(#999);
+  .fontSize(10px);
+  .padding-width(18px, 0, 18px, 0);
+}
+.filed-box {
+  width: 200px; 
+  text-align: center; 
+  .fontSize(14px);
+  .margin-width(0, auto, 0, auto);
+  .borderCommon(top, 1px, solid, #ccc);
+}
+.filed-text {
+  width: 266px; 
+  .margin-width(5px, auto, 5px, auto);
+  .padding-width(5px, 10px, 5px, 10px);
+  .lineHeight(22px);
+  .borderCommon(top, 1px, solid, #ccc);
+  .borderCommon(bottom, 1px, solid, #ccc);
+  .borderCommon(left, 1px, solid, #ccc);
+  .borderCommon(right, 1px, solid, #ccc);
+  .borderRadius(4px);
+}
+.group-name {
+  font-family: @fontArial;
+}
+
+// 高铁首页
+@import 'main';
+
+// 航班首页
+@import 'main-flight';
+
+// 商品详情
+@import 'goods-detail';
+
+// 订单详情
+@import 'order-detail';
+
+// 积分规则与说明
+@import 'integral-rule';
+
+// 兑换纪录
+@import 'exchange-record';
+
+// 支付页面
+@import 'pay-page';
+
+// 支付订单详情页面
+@import 'pay-order-detail';
+
+// 地址页面
+@import 'address-page';
+
+// 快递页面
+@import 'courier-page';
+

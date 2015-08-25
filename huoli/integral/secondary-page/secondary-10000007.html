@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection"content="telephone=no">
+  <title>韩寒约你做一件“孩子气”的事－－盲抽神秘礼物</title>
+  <link href="https://dl.rsscc.cn/guanggao/integral/css/global.css" rel="stylesheet" >
+  <link href="https://dl.rsscc.cn/guanggao/integral/css/index.css" rel="stylesheet" >
+  <style type="text/css">
+  .ear-btn {
+  	width: 76%; 
+	  height: 36px; 
+	  line-height: 36px; 
+	  font-size: 18px; 
+	  text-align: center; 
+	  border-radius: 5px; 
+	  background: -moz-linear-gradient(top, #a1d9d3 0%, #2ebdb2 100%);
+	  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#a1d9d3), color-stop(100%,#2ebdb2));
+	  background: -webkit-linear-gradient(top, #a1d9d3 0%,#2ebdb2 100%);
+	  background: -o-linear-gradient(top, #a1d9d3 0%,#2ebdb2 100%);
+	  background: -ms-linear-gradient(top, #a1d9d3 0%,#2ebdb2 100%);
+	  background: linear-gradient(to bottom, #a1d9d3 0%,#2ebdb2 100%);
+	  position: absolute;
+	  left: 50%;
+	  bottom: 24%;
+	  margin-left: -38%;
+  }
+  </style>
+</head>
+<body>
+  <section class="interlayer">
+    <div class="enter-pic-bar">
+      <img src="http://cdn.rsscc.cn/guanggao/img/mall/active/ear/ear-1.jpg" >
+			<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/ear/ear-2.jpg" >
+			<div style="position: relative;">
+				<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/ear/ear-3.jpg">
+				<a href="https://mall.rsscc.cn/fe/app/client/mall/html/detail-page/goods-detail.html?productid=1000317" class="ear-btn" id="ear-btn">马上参与</a>
+			</div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    window.onload=function(){
+    var oGobtn = document.getElementById('ear-btn');
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+    oGobtn.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.gtgj.view";
+    } else {
+    oGobtn.href = "https://mall.rsscc.cn/fe/app/client/mall/html/detail-page/goods-detail.html?productid=1000317";
+    }
+    };
+  </script>
+  <script data-main="//jp.rsscc.com/promotion/scripts/wechattools/main" src="//jp.rsscc.com/promotion/scripts/wechattools/require.js"></script>
+  <div style="display:none;">
+    <div id="fenxiang_title">韩寒邀请函：盲抽，你玩么</div>
+    <div id="fenxiang_img">http://cdn.rsscc.cn/guanggao/img/mall/share/h2-share-10000007.png</div>
+    <div id="fenxiang_desc">3积分，抽神秘礼品，邀好友一起“抽疯”吧</div>
+    <div id="fenxiang_link">https://dl.rsscc.cn/guanggao/integral/secondary-page/secondary-10000007.html</div>
+    <div id="weibo_fenxiang_img">http://cdn.rsscc.cn/guanggao/img/mall/share/h2-share-10000007.png</div>
+   </div>
+   <script>
+  (function(root, factory) {
+    root.NBridge = factory(root, {});
+  }(this, function(root, NBridge) {
+    var JSON_RPC_ERROR = {
+      PARSE_ERROR: {
+        code: -32700,
+        message: "Parse error"
+      },
+      INVALID_REQUEST: {
+        code: -32600,
+        message: "Invalid Request"
+      },
+      METHOD_NOT_FOUND: {
+        code: -32601,
+        message: "Method not found"
+      },
+      INVALID_PARAMS: {
+        code: -32602,
+        message: "Invalid params"
+      },
+      INTERNAL_ERROR: {
+        code: -32603,
+        message: "Internal error"
+      }
+    };
+
+    var methods = {};
+    var callbacks = {};
+    var idCounter = 1;
+
+    var send = function(message) {
+      window.console.log("javascript -> native: " + JSON.stringify(message));
+      window.NativeAPI.sendToNative(JSON.stringify(message));
+    };
+
+    var executeMethod = function(message) {
+      var fn = methods[message.method];
+
+      if (!fn) {
+        send({
+          jsonrpc: "2.0",
+          error: JSON_RPC_ERROR.METHOD_NOT_FOUND,
+          id: message.id || null
+        });
+        return;
+      }
+      setTimeout(function() {
+        try {
+          fn(message.params, function(err, result) {
+            if (!message.id) {
+              return;
+            }
+
+            if (err) {
+              send({
+                jsonrpc: "2.0",
+                error: {
+                  code: err.code,
+                  message: err.message
+                },
+                id: message.id
+              });
+            } else {
+              send({
+                jsonrpc: "2.0",
+                result: result,
+                id: message.id
+              });
+            }
+          });
+        } catch (ex) {
+          send({
+            jsonrpc: "2.0",
+            error: {
+              code: ex.code || -32000,
+              message: ex.message
+            },
+            id: message.id
+          });
+        }
+      }, 0);
+    };
+
+    var handleCallback = function(message) {
+      var callback = callbacks[message.id];
+      callbacks[message.id] = null;
+
+      if (!callback) {
+        return;
+      }
+      setTimeout(function() {
+        callback(message.error || null, message.result);
+      }, 0);
+    };
+
+    var handleInternalError = function(message) {
+      try {
+        message = JSON.parse(message);
+      } catch (ex) {
+        return;
+      }
+      if (message.id) {
+        handleCallback({
+          jsonrpc: "2.0",
+          error: JSON_RPC_ERROR.INTERNAL_ERROR,
+          id: message.id
+        });
+      }
+    };
+
+    window.NativeAPI = window.NativeAPI || {};
+
+    if (!window.NativeAPI.sendToNative) {
+      (function() {
+        var buffer = [];
+
+        var timer = setTimeout(function() {
+          buffer.forEach(handleInternalError);
+          window.NativeAPI.sendToNative = handleInternalError;
+        }, 3000);
+
+        document.addEventListener("WebViewJavascriptBridgeReady", function() {
+          clearTimeout(timer);
+          setTimeout(function() {
+            buffer.forEach(window.NativeAPI.sendToNative);
+          }, 10);
+        }, false);
+
+        window.NativeAPI.sendToNative = function(message) {
+          buffer.push(message);
+        };
+      })();
+    }
+
+    window.NativeAPI.sendToJavaScript = function(message) {
+      window.console.log("native -> javascript: " + message);
+      try {
+        message = JSON.parse(message);
+      } catch (ex) {
+        return send({
+          jsonrpc: "2.0",
+          error: JSON_RPC_ERROR.PARSE_ERROR,
+          id: null
+        });
+      }
+
+      if (message.method) {
+        executeMethod(message);
+      } else if (message.id) {
+        handleCallback(message);
+      }
+    };
+
+    NBridge.registerHandler = function(name, fn) {
+      methods[name] = fn;
+    };
+
+    NBridge.invoke = function(method, params, callback) {
+      var message = {
+        jsonrpc: "2.0",
+        method: method,
+        params: params
+      };
+      var id;
+
+      if (callback) {
+        id = "jsonp_" + idCounter;
+        idCounter++;
+
+        callbacks[id] = callback;
+        message.id = id;
+      }
+
+      send(message);
+    };
+
+    Object.keys(JSON_RPC_ERROR).forEach(function(key) {
+      NBridge[key] = JSON_RPC_ERROR[key];
+    });
+
+    return NBridge;
+  }));
+
+
+  var aTags = document.querySelectorAll("a.ear-btn");
+
+  Array.prototype.map.call(aTags, function(elem) {
+    elem.addEventListener("click", function(e) {
+      e.preventDefault();
+      var url = e.currentTarget.href;
+      NBridge.invoke("createWebView", {
+        url: url,
+        controls: [
+          {
+            type: "title",
+            text: e.currentTarget.innerText || ""
+          }
+        ]
+      }, function(err) {
+        if ( err && (err.code === -32603) ) {
+          window.location.href = url;
+        }
+      });
+    });
+  });
+  </script>
+</body>
+</html>

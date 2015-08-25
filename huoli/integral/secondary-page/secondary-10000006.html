@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection"content="telephone=no">
+  <title>匀养自耕•冰雪香米</title>
+  <link href="https://dl.rsscc.cn/guanggao/integral/css/global.css" rel="stylesheet" >
+  <link href="https://dl.rsscc.cn/guanggao/integral/css/index.css" rel="stylesheet" >
+  <style>
+  .yun-btn-box { 
+  	width: 100%;
+  	height: 100px;
+  	background: #fff; 
+  	padding-top: 20px;
+  }
+  .yun-mi-btn {
+  	width: 76%; 
+	  height: 36px; 
+	  line-height: 36px; 
+	  font-size: 18px; 
+	  color: #fff; 
+	  margin: 0 auto; 
+	  text-align: center; 
+	  border-radius: 5px; 
+	  display: block;
+	  background: #af001a;
+  }
+  </style>
+</head>
+<body>
+  <section class="interlayer">
+    <div class="enter-pic-bar">
+      <img src="http://cdn.rsscc.cn/guanggao/img/mall/h2-secondary-10000006-1.jpg" >
+			<img src="http://cdn.rsscc.cn/guanggao/img/mall/h2-secondary-10000006-2.jpg" >
+      <img src="http://cdn.rsscc.cn/guanggao/img/mall/h2-secondary-10000006-3.jpg" >
+      <img src="http://cdn.rsscc.cn/guanggao/img/mall/h2-secondary-10000006-4.jpg" >
+      <img src="http://cdn.rsscc.cn/guanggao/img/mall/h2-secondary-10000006-5.jpg" >
+      <img src="http://cdn.rsscc.cn/guanggao/img/mall/h2-secondary-10000006-6.jpg?q=s" >
+      <div class="yun-btn-box">
+        <a href="https://mall.rsscc.cn/fe/app/client/mall/html/detail-page/goods-detail.html?productid=1000311" class="yun-mi-btn" id="yun-mi-btn">立即兑换</a>
+      </div>
+    </div>
+  </section>
+  <script type="text/javascript">
+    window.onload=function(){
+    var oGobtn = document.getElementById('yun-mi-btn');
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+    oGobtn.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.gtgj.view";
+    } else {
+    oGobtn.href = "https://mall.rsscc.cn/fe/app/client/mall/html/detail-page/goods-detail.html?productid=1000311";
+    }
+    };
+  </script>
+  <script data-main="//jp.rsscc.com/promotion/scripts/wechattools/main" src="//jp.rsscc.com/promotion/scripts/wechattools/require.js"></script>
+  <div style="display:none;">
+    <div id="fenxiang_title">匀养自耕—冰雪香米</div>
+    <div id="fenxiang_img">http://cdn.rsscc.cn/guanggao/img/mall/share/h2-share-10000006.png</div>
+    <div id="fenxiang_desc">清华高知土豪众筹耕种，品质生活从“米”开始</div>
+    <div id="fenxiang_link">https://dl.rsscc.cn/guanggao/integral/secondary-page/secondary-10000006.html</div>
+    <div id="weibo_fenxiang_img">http://cdn.rsscc.cn/guanggao/img/mall/share/h2-share-10000006.png</div>
+   </div>
+   <script>
+  (function(root, factory) {
+    root.NBridge = factory(root, {});
+  }(this, function(root, NBridge) {
+    var JSON_RPC_ERROR = {
+      PARSE_ERROR: {
+        code: -32700,
+        message: "Parse error"
+      },
+      INVALID_REQUEST: {
+        code: -32600,
+        message: "Invalid Request"
+      },
+      METHOD_NOT_FOUND: {
+        code: -32601,
+        message: "Method not found"
+      },
+      INVALID_PARAMS: {
+        code: -32602,
+        message: "Invalid params"
+      },
+      INTERNAL_ERROR: {
+        code: -32603,
+        message: "Internal error"
+      }
+    };
+
+    var methods = {};
+    var callbacks = {};
+    var idCounter = 1;
+
+    var send = function(message) {
+      window.console.log("javascript -> native: " + JSON.stringify(message));
+      window.NativeAPI.sendToNative(JSON.stringify(message));
+    };
+
+    var executeMethod = function(message) {
+      var fn = methods[message.method];
+
+      if (!fn) {
+        send({
+          jsonrpc: "2.0",
+          error: JSON_RPC_ERROR.METHOD_NOT_FOUND,
+          id: message.id || null
+        });
+        return;
+      }
+      setTimeout(function() {
+        try {
+          fn(message.params, function(err, result) {
+            if (!message.id) {
+              return;
+            }
+
+            if (err) {
+              send({
+                jsonrpc: "2.0",
+                error: {
+                  code: err.code,
+                  message: err.message
+                },
+                id: message.id
+              });
+            } else {
+              send({
+                jsonrpc: "2.0",
+                result: result,
+                id: message.id
+              });
+            }
+          });
+        } catch (ex) {
+          send({
+            jsonrpc: "2.0",
+            error: {
+              code: ex.code || -32000,
+              message: ex.message
+            },
+            id: message.id
+          });
+        }
+      }, 0);
+    };
+
+    var handleCallback = function(message) {
+      var callback = callbacks[message.id];
+      callbacks[message.id] = null;
+
+      if (!callback) {
+        return;
+      }
+      setTimeout(function() {
+        callback(message.error || null, message.result);
+      }, 0);
+    };
+
+    var handleInternalError = function(message) {
+      try {
+        message = JSON.parse(message);
+      } catch (ex) {
+        return;
+      }
+      if (message.id) {
+        handleCallback({
+          jsonrpc: "2.0",
+          error: JSON_RPC_ERROR.INTERNAL_ERROR,
+          id: message.id
+        });
+      }
+    };
+
+    window.NativeAPI = window.NativeAPI || {};
+
+    if (!window.NativeAPI.sendToNative) {
+      (function() {
+        var buffer = [];
+
+        var timer = setTimeout(function() {
+          buffer.forEach(handleInternalError);
+          window.NativeAPI.sendToNative = handleInternalError;
+        }, 3000);
+
+        document.addEventListener("WebViewJavascriptBridgeReady", function() {
+          clearTimeout(timer);
+          setTimeout(function() {
+            buffer.forEach(window.NativeAPI.sendToNative);
+          }, 10);
+        }, false);
+
+        window.NativeAPI.sendToNative = function(message) {
+          buffer.push(message);
+        };
+      })();
+    }
+
+    window.NativeAPI.sendToJavaScript = function(message) {
+      window.console.log("native -> javascript: " + message);
+      try {
+        message = JSON.parse(message);
+      } catch (ex) {
+        return send({
+          jsonrpc: "2.0",
+          error: JSON_RPC_ERROR.PARSE_ERROR,
+          id: null
+        });
+      }
+
+      if (message.method) {
+        executeMethod(message);
+      } else if (message.id) {
+        handleCallback(message);
+      }
+    };
+
+    NBridge.registerHandler = function(name, fn) {
+      methods[name] = fn;
+    };
+
+    NBridge.invoke = function(method, params, callback) {
+      var message = {
+        jsonrpc: "2.0",
+        method: method,
+        params: params
+      };
+      var id;
+
+      if (callback) {
+        id = "jsonp_" + idCounter;
+        idCounter++;
+
+        callbacks[id] = callback;
+        message.id = id;
+      }
+
+      send(message);
+    };
+
+    Object.keys(JSON_RPC_ERROR).forEach(function(key) {
+      NBridge[key] = JSON_RPC_ERROR[key];
+    });
+
+    return NBridge;
+  }));
+
+
+  var aTags = document.querySelectorAll("a.yun-mi-btn");
+
+  Array.prototype.map.call(aTags, function(elem) {
+    elem.addEventListener("click", function(e) {
+      e.preventDefault();
+      var url = e.currentTarget.href;
+      NBridge.invoke("createWebView", {
+        url: url,
+        controls: [
+          {
+            type: "title",
+            text: e.currentTarget.innerText || ""
+          }
+        ]
+      }, function(err) {
+        if ( err && (err.code === -32603) ) {
+          window.location.href = url;
+        }
+      });
+    });
+  });
+  </script>
+</body>
+</html>

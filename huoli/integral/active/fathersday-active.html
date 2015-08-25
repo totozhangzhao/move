@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1.0, user-scalable=no, maximum-scale=1, width=device-width">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <meta name="format-detection"content="telephone=no">
+	<title>韩寒发布父亲节神秘任务</title>
+	<style type="text/css">
+	* {
+		margin:0; padding:0; 
+	}
+	body, html {
+		width: 100%;
+		min-height: 100%;
+		font-family: "Microsoft yahei";
+	}
+	.box {
+		max-width: 750px;
+		background: #000;
+		padding-bottom: 60px;
+	}
+	.box img {
+		width: 100%;
+		display: block;
+	  border: none;
+	}
+	.box .text {
+		color: #fff;
+		text-align: center;
+		font-size: 14px;
+	}
+	.go-btn {
+		width: 60%;
+		height: 40px;
+		line-height: 40px;
+		text-align: center;
+		font-size: 24px;
+		background: #e42810;
+		color: #000;
+		display: block;
+		margin: 30px auto 0;
+		border-radius: 5px;
+		text-decoration: none;
+	}
+	</style>
+</head>
+<body>
+<section class="box">
+	<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/fatherday/father-day-1.png">
+	<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/fatherday/father-day-2.png">
+	<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/fatherday/father-day-3.png">
+	<img src="http://cdn.rsscc.cn/guanggao/img/mall/active/fatherday/father-day-4.png">
+	<p class="text">分享给更多朋友，参与任务，赢取大奖</p>
+	<a href="javascript:;" class="go-btn" id="go-btn">马上参与</a>
+</section>
+<script type="text/javascript">
+	window.onload=function(){
+		var oGobtn = document.getElementById('go-btn');
+    var ua = navigator.userAgent.toLowerCase();
+    if(ua.match(/MicroMessenger/i)=="micromessenger") {
+        oGobtn.href = "http://a.app.qq.com/o/simple.jsp?pkgname=com.gtgj.view";
+    } else {
+        oGobtn.href = "https://mall.rsscc.cn/fe/app/client/mall/html/detail-page/goods-detail.html?productid=1000229";
+    }
+};
+</script>
+<script data-main="//jp.rsscc.com/promotion/scripts/wechattools/main" src="//jp.rsscc.com/promotion/scripts/wechattools/require.js"></script>
+<div style="display:none;">
+  <div id="fenxiang_title">到高铁管家领神秘暗号，韩寒正在等你“接头”！</div>
+  <div id="fenxiang_img">http://cdn.rsscc.cn/guanggao/img/mall/active/fatherday/icon.png</div>
+  <div id="fenxiang_desc">不一样的父亲节，不煽情，玩刺激，参加活动，赢取高铁管家惊喜礼品</div>
+  <div id="fenxiang_link">http://mall.rsscc.cn/fqj/fathersday-active.html</div>
+  <div id="weibo_fenxiang_img">http://cdn.rsscc.cn/guanggao/img/mall/active/fatherday/icon.png</div>
+ </div>
+ <script>
+(function(root, factory) {
+  root.NBridge = factory(root, {});
+}(this, function(root, NBridge) {
+  var JSON_RPC_ERROR = {
+    PARSE_ERROR: {
+      code: -32700,
+      message: "Parse error"
+    },
+    INVALID_REQUEST: {
+      code: -32600,
+      message: "Invalid Request"
+    },
+    METHOD_NOT_FOUND: {
+      code: -32601,
+      message: "Method not found"
+    },
+    INVALID_PARAMS: {
+      code: -32602,
+      message: "Invalid params"
+    },
+    INTERNAL_ERROR: {
+      code: -32603,
+      message: "Internal error"
+    }
+  };
+
+  var methods = {};
+  var callbacks = {};
+  var idCounter = 1;
+
+  var send = function(message) {
+    window.console.log("javascript -> native: " + JSON.stringify(message));
+    window.NativeAPI.sendToNative(JSON.stringify(message));
+  };
+
+  var executeMethod = function(message) {
+    var fn = methods[message.method];
+
+    if (!fn) {
+      send({
+        jsonrpc: "2.0",
+        error: JSON_RPC_ERROR.METHOD_NOT_FOUND,
+        id: message.id || null
+      });
+      return;
+    }
+    setTimeout(function() {
+      try {
+        fn(message.params, function(err, result) {
+          if (!message.id) {
+            return;
+          }
+
+          if (err) {
+            send({
+              jsonrpc: "2.0",
+              error: {
+                code: err.code,
+                message: err.message
+              },
+              id: message.id
+            });
+          } else {
+            send({
+              jsonrpc: "2.0",
+              result: result,
+              id: message.id
+            });
+          }
+        });
+      } catch (ex) {
+        send({
+          jsonrpc: "2.0",
+          error: {
+            code: ex.code || -32000,
+            message: ex.message
+          },
+          id: message.id
+        });
+      }
+    }, 0);
+  };
+
+  var handleCallback = function(message) {
+    var callback = callbacks[message.id];
+    callbacks[message.id] = null;
+
+    if (!callback) {
+      return;
+    }
+    setTimeout(function() {
+      callback(message.error || null, message.result);
+    }, 0);
+  };
+
+  var handleInternalError = function(message) {
+    try {
+      message = JSON.parse(message);
+    } catch (ex) {
+      return;
+    }
+    if (message.id) {
+      handleCallback({
+        jsonrpc: "2.0",
+        error: JSON_RPC_ERROR.INTERNAL_ERROR,
+        id: message.id
+      });
+    }
+  };
+
+  window.NativeAPI = window.NativeAPI || {};
+
+  if (!window.NativeAPI.sendToNative) {
+    (function() {
+      var buffer = [];
+
+      var timer = setTimeout(function() {
+        buffer.forEach(handleInternalError);
+        window.NativeAPI.sendToNative = handleInternalError;
+      }, 3000);
+
+      document.addEventListener("WebViewJavascriptBridgeReady", function() {
+        clearTimeout(timer);
+        setTimeout(function() {
+          buffer.forEach(window.NativeAPI.sendToNative);
+        }, 10);
+      }, false);
+
+      window.NativeAPI.sendToNative = function(message) {
+        buffer.push(message);
+      };
+    })();
+  }
+
+  window.NativeAPI.sendToJavaScript = function(message) {
+    window.console.log("native -> javascript: " + message);
+    try {
+      message = JSON.parse(message);
+    } catch (ex) {
+      return send({
+        jsonrpc: "2.0",
+        error: JSON_RPC_ERROR.PARSE_ERROR,
+        id: null
+      });
+    }
+
+    if (message.method) {
+      executeMethod(message);
+    } else if (message.id) {
+      handleCallback(message);
+    }
+  };
+
+  NBridge.registerHandler = function(name, fn) {
+    methods[name] = fn;
+  };
+
+  NBridge.invoke = function(method, params, callback) {
+    var message = {
+      jsonrpc: "2.0",
+      method: method,
+      params: params
+    };
+    var id;
+
+    if (callback) {
+      id = "jsonp_" + idCounter;
+      idCounter++;
+
+      callbacks[id] = callback;
+      message.id = id;
+    }
+
+    send(message);
+  };
+
+  Object.keys(JSON_RPC_ERROR).forEach(function(key) {
+    NBridge[key] = JSON_RPC_ERROR[key];
+  });
+
+  return NBridge;
+}));
+
+
+var aTags = document.querySelectorAll("a.go-btn");
+
+Array.prototype.map.call(aTags, function(elem) {
+  elem.addEventListener("click", function(e) {
+    e.preventDefault();
+    var url = e.currentTarget.href;
+    NBridge.invoke("createWebView", {
+      url: url,
+      controls: [
+        {
+          type: "title",
+          text: e.currentTarget.innerText || ""
+        }
+      ]
+    }, function(err) {
+      if ( err && (err.code === -32603) ) {
+        window.location.href = url;
+      }
+    });
+  });
+});
+</script>
+</body>
+</html>

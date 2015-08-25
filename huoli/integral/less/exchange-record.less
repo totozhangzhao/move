@@ -1,0 +1,95 @@
+// 兑换纪录 start
+
+.record-area,
+.integral-list-area {
+  height: 84px;
+  .padding-width();
+  .borderCommon(bottom, 1px, solid, #ccc);
+  .margin-common(bottom, -1px);
+}
+.record-area {
+  .pos();
+}
+.record-pic-bar,
+.list-pic-bar {
+  .margin-common(top, 10px);
+}
+.record-text-bar,
+.list-text-bar {
+  .margin-common(left, 10px);
+  .margin-common(top, 10px);
+}
+.record-text-bar {
+  width: 70%;
+}
+.record-text-tit {
+  .ellipsis;
+}
+.record-text-det, .record-text-time {
+  .fontSize(14px);
+  .lineHeight(20px);
+}
+.record-need-integral {
+  .margin-common(top, 10px);
+  .margin-common(right, 35px);
+}
+.record-text-time {
+  .fontColor(#999);
+}
+.order-bar {
+  .margin-common(top, 8px);
+}
+.order-bar p {
+  height:16px; 
+  .lineHeight(16px);
+}
+.order-status-time {
+  .fontColor(#999);
+  .fontSize(14px);
+}
+.enter-btn {
+  width: 9px;
+  height: 18px;
+  .margin-common(top, 28px);
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/icon/arrow-icon.png) no-repeat;
+  background-size: cover;
+}
+.exchange-empty-box {
+  max-width: 750px;
+  display: none;
+  .margin-width(0, auto, 0, auto);
+}
+.exchange-empty-pic {
+  width: 104px;
+  height: 104px;
+  .margin-width(128px, auto, 36px, auto);
+}
+.exchange-empty-text {
+  text-align: center;
+  .padding-width(0, 0, 30px, 0);
+}
+.order-status {
+  width: 76px;
+  text-align: center;
+  height: @commonHeight;
+  .lineHeight(22px);
+  .fontSize(12px);
+  .fontColor(#fff);
+  background: url(http://cdn.rsscc.cn/guanggao/img/mall/h2-pay-sprite.png) no-repeat;
+  .bgSize(350px, 350px);
+  .pos(absolute, right, 0, bottom, 10px);
+}
+.order-status-succ {
+  .bgPos(0, 0);
+}
+.order-status-waitsure {
+  .bgPos(-86px, 0);
+}
+.order-status-waitpay {
+  .bgPos(-172px, 0);
+}
+.order-status-fail {
+  .bgPos(-258px, 0);
+}
+
+// 兑换纪录 end 
